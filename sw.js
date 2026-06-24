@@ -1,9 +1,6 @@
-self.addEventListener('install', function(e) { self.skipWaiting() });
-self.addEventListener('activate', function(e) { e.waitUntil(clients.claim()) });
-self.addEventListener('fetch', function(e) {
-    e.respondWith(
-        fetch(e.request).catch(function() {
-            return caches.match(e.request);
-        })
-    );
+const CACHE='mytube-v2';
+self.addEventListener('install',e=>{self.skipWaiting()});
+self.addEventListener('activate',e=>{e.waitUntil(clients.claim())});
+self.addEventListener('fetch',e=>{
+    e.respondWith(fetch(e.request).catch(()=>caches.match(e.request)));
 });
