@@ -14,18 +14,18 @@
     <meta property="og:description" content="Watch trending videos, shorts, download for offline. Best video platform.">
     <meta property="og:url" content="https://my-premium-you-tube.vercel.app/">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://my-premium-you-tube.vercel.app/icon.png">
+    <meta property="og:image" content="https://i.ibb.co/RkHqcjyT/1000104664.jpg">
     <meta name="theme-color" content="#ff0000">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="My Premium YT">
+    <meta name="apple-mobile-web-app-title" content="Premium YT">
     <link rel="apple-touch-icon" href="icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"WebApplication","name":"My Premium YouTube","alternateName":"মাই প্রিমিয়াম ইউটিউব","url":"https://my-premium-you-tube.vercel.app/","description":"Watch trending videos, shorts, download for offline","applicationCategory":"Entertainment","offers":{"@type":"Offer","price":"0","priceCurrency":"BDT"}}
+    {"@context":"https://schema.org","@type":"WebApplication","name":"My Premium YouTube","alternateName":"মাই প্রিমিয়াম ইউটিউব","url":"https://my-premium-you-tube.vercel.app/","description":"Watch trending videos, shorts, download for offline","applicationCategory":"Entertainment","image":"https://i.ibb.co/RkHqcjyT/1000104664.jpg","offers":{"@type":"Offer","price":"0","priceCurrency":"BDT"}}
     </script>
     <style>
         *{-webkit-user-select:none!important;-moz-user-select:none!important;-ms-user-select:none!important;user-select:none!important;-webkit-touch-callout:none!important}
@@ -41,10 +41,10 @@
         /* ===== স্প্ল্যাশ স্ক্রিন ===== */
         #splash{position:fixed;inset:0;background:linear-gradient(145deg,#0a0a0a 0%,#1a1a2e 50%,#0f0f0f 100%);z-index:500;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;text-align:center;transition:opacity .4s}
         #splash.hide{opacity:0;pointer-events:none}
-        .sp-logo{width:110px;height:110px;background:var(--red);border-radius:26px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;box-shadow:0 8px 40px rgba(255,0,0,.35);position:relative;overflow:hidden}
+        .sp-logo{width:120px;height:120px;border-radius:24px;overflow:hidden;box-shadow:0 8px 40px rgba(255,0,0,.35);margin-bottom:16px;position:relative}
+        .sp-logo img{width:100%;height:100%;object-fit:cover;display:block}
         .sp-logo::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent 40%,rgba(255,255,255,.15) 50%,transparent 60%);animation:spShine 3s infinite}
         @keyframes spShine{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
-        .sp-logo svg{width:60px;height:60px;fill:#fff;position:relative;z-index:1}
         .sp-name{font-size:30px;font-weight:900;color:#fff;margin-bottom:2px;letter-spacing:-.5px}
         .sp-name em{font-style:normal;color:var(--gold);font-size:14px;font-weight:500;display:block;letter-spacing:1px;margin-top:2px}
         .sp-tag{font-size:12px;color:rgba(255,255,255,.35);margin-bottom:36px;letter-spacing:.5px}
@@ -60,8 +60,8 @@
         /* ===== মেইন ===== */
         header{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;position:sticky;top:0;background:var(--bg);z-index:100}
         .logo{display:flex;align-items:center;gap:6px}
-        .logo-ic{width:30px;height:20px;background:var(--red);border-radius:4px;display:flex;align-items:center;justify-content:center}
-        .logo-ic svg{width:15px;height:15px;fill:#fff}
+        .logo-ic{width:32px;height:22px;border-radius:5px;overflow:hidden;flex-shrink:0}
+        .logo-ic img{width:100%;height:100%;object-fit:cover;display:block}
         .logo-tx{font-size:16px;font-weight:700;letter-spacing:-.3px}
         .logo-tx em{font-style:normal;color:var(--gold);font-size:9px;font-weight:500;vertical-align:super;margin-left:1px}
         .h-i{display:flex;gap:14px;align-items:center}
@@ -98,8 +98,8 @@
         #auth,#authLogin{display:none;position:fixed;inset:0;background:var(--bg);z-index:200;justify-content:center;align-items:center;flex-direction:column;overflow-y:auto}
         .af{background:var(--sf);padding:28px 24px;border-radius:12px;width:90%;max-width:380px}
         .af h2{margin:0 0 4px;text-align:center;display:flex;align-items:center;justify-content:center;gap:8px;font-size:20px}
-        .af h2 .al{width:24px;height:17px;background:var(--red);border-radius:3px;display:flex;align-items:center;justify-content:center}
-        .af h2 .al svg{width:12px;height:12px;fill:#fff}
+        .af h2 .al{width:28px;height:28px;border-radius:6px;overflow:hidden;flex-shrink:0}
+        .af h2 .al img{width:100%;height:100%;object-fit:cover;display:block}
         .af .sub{font-size:13px;color:var(--txs);text-align:center;margin-bottom:20px}
         .af input,.af select,.af textarea{width:100%;padding:12px;margin-bottom:10px;border:1px solid var(--bd);border-radius:8px;font-size:15px;outline:none;background:#fff;font-family:inherit;-webkit-appearance:none;appearance:none}
         .af input:focus,.af select:focus{border-color:var(--blue)}
@@ -223,8 +223,8 @@
         /* ইনস্টল ব্যানার */
         .ib{display:none;position:fixed;bottom:56px;left:0;right:0;background:var(--bg);border-top:1px solid var(--bd);padding:12px 16px;z-index:99;align-items:center;gap:12px;box-shadow:0 -2px 8px rgba(0,0,0,.08)}
         .ib.show{display:flex}
-        .ib-i{width:36px;height:36px;border-radius:8px;background:var(--red);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-        .ib-i svg{width:18px;height:18px;fill:#fff}
+        .ib-i{width:36px;height:36px;border-radius:8px;overflow:hidden;flex-shrink:0}
+        .ib-i img{width:100%;height:100%;object-fit:cover}
         .ib-t{flex:1;font-size:13px;color:var(--tx);font-weight:500}
         .ib-b{background:var(--blue);color:#fff;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:600}
         .ib-c{color:var(--txs);padding:8px}
@@ -238,7 +238,7 @@
 
     <!-- ===== স্প্ল্যাশ স্ক্রিন ===== -->
     <div id="splash">
-        <div class="sp-logo"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="sp-logo"><img src="https://i.ibb.co/RkHqcjyT/1000104664.jpg" alt="My Premium YouTube"></div>
         <div class="sp-name">My Premium<em>YOUTUBE</em></div>
         <div class="sp-tag">WATCH · DOWNLOAD · SHARE</div>
         <button class="sp-dl" id="spDl"><i class="material-icons">download</i> Download App</button>
@@ -254,7 +254,7 @@
     <!-- ===== রেজিস্ট্রেশন ===== -->
     <div id="auth">
         <div class="af">
-            <h2><div class="al"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div> My Premium YouTube</h2>
+            <h2><div class="al"><img src="https://i.ibb.co/RkHqcjyT/1000104664.jpg" alt="Logo"></div> My Premium YouTube</h2>
             <p class="sub">Create account to get started</p>
             <input type="text" id="regName" placeholder="Full Name *">
             <input type="email" id="regEmail" placeholder="Email Address *">
@@ -271,7 +271,7 @@
     </div>
     <div id="authLogin">
         <div class="af">
-            <h2><div class="al"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div> Welcome Back</h2>
+            <h2><div class="al"><img src="https://i.ibb.co/RkHqcjyT/1000104664.jpg" alt="Logo"></div> Welcome Back</h2>
             <p class="sub">Sign in to My Premium YouTube</p>
             <input type="email" id="loginEmail" placeholder="Email Address">
             <input type="password" id="loginPass" placeholder="Password">
@@ -284,25 +284,25 @@
     <!-- ===== মেইন অ্যাপ ===== -->
     <div id="app">
         <header>
-            <div class="logo" id="homeBtn"><div class="logo-ic"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="logo-tx">My Premium<em>YT</em></div></div>
+            <div class="logo" id="homeBtn"><div class="logo-ic"><img src="https://i.ibb.co/RkHqcjyT/1000104664.jpg" alt="Logo"></div><div class="logo-tx">My Premium<em>YT</em></div></div>
             <div class="h-i"><i class="material-icons" id="searchBtn">search</i><i class="material-icons" id="profBtn">account_circle</i></div>
         </header>
         <main id="grid" class="grid"></main>
         <nav class="bnav">
             <div class="ni act" data-t="home"><div class="nic"><svg class="ii" viewBox="0 0 24 24"><path d="M12 4.33l7 6.12V20h-4v-6H9v6H5V10.45l7-6.12M12 3 4 10v11h6v-6h4v6h6V10L12 3z"/></svg><svg class="ia" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div><span class="nl">Home</span></div>
-            <div class="ni" data-t="shorts"><div class="nic"><svg class="ii" viewBox="0 0 24 24"><path d="M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25zm-.23 5.86-8.5 4.5c-1.34.71-3.01.2-3.72-1.14-.71-1.34-.2-3.01 1.14-3.72l2.04-1.08 1.5.63c-.69.52-1.13 1.33-1.13 2.23 0 1.38 1.12 2.5 2.5 2.5.51 0 .98-.15 1.38-.42l4.79-2.54c.34-.18.56-.52.56-.91 0-.57-.46-1.03-1.03-1.03-.18 0-.35.05-.5.13l-1.5.79-.63-1.5 2.04-1.08c1.34-.71 3.01-.2 3.72 1.14.71 1.34.2 3.01-1.16 3.72z"/></svg></div><span class="nl">Shorts</span></div>
+            <div class="ni" data-t="shorts"><div class="nic"><svg class="ii" viewBox="0 0 24 24"><path d="M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25zm-.23 5.86-8.5 4.5c-1.34.71-3.01.2-3.72-1.14-.71-1.34-.2-3.01 1.14-3.72l2.04-1.08 1.5.63c-.69.52-1.13 1.33-1.13 2.23 0 1.38 1.12 2.5 2.5.51 0 .98-.15 1.38-.42l4.79-2.54c.34-.18.56-.52.56-.91 0-.57-.46-1.03-1.03-.18 0-.35.05-.5.13l-1.5.79-.63-1.5 2.04-1.08c1.34-.71 3.01-.2 3.72 1.14.71 1.34.2 3.01-1.16 3.72z"/></svg></div><span class="nl">Shorts</span></div>
             <div class="ni ci" data-t="create"><div class="cc"><svg viewBox="0 0 24 24"><path d="M12 20h-2v-6H4v-2h6V6h2v6h6v2h-6z"/></svg></div><span class="nl" style="visibility:hidden">X</span></div>
-            <div class="ni" data-t="sub"><div class="nic"><svg class="ii" viewBox="0 0 24 24"><path d="M4 6h16v2H4zm2-4h12v2H6zm14 8H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2zm-8 12.5v-9l6 4.5-6 4.5z"/></svg></div><span class="nl">Subscriptions</span></div>
-            <div class="ni" data-t="you"><div class="nic"><svg class="ii" viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8 12.5v-9l6 4.5-6 4.5z"/></svg></div><span class="nl">You</span><span class="nbadge" id="nbadge">0</span></div>
+            <div class="ni" data-t="sub"><div class="nic"><svg class="ii" viewBox="0 0 24 24"><path d="M4 6h16v2H4zm2-4h12v2H6zm14 8H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2 2h16c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2zm-8 12.5v-9l6 4.5-6 4.5z"/></svg></div><span class="nl">Subscriptions</span></div>
+            <div class="ni" data-t="you"><div class="nic"><svg class="ii" viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8 12.5v-9l6 4.5-6 4.5z"/></svg></div><span class="nl">You</span><span class="nbadge" id="nbadge">0</span></div>
         </nav>
     </div>
-    <div class="ib" id="installBanner"><div class="ib-i"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="ib-t">Install My Premium YouTube</div><button class="ib-b" id="installBtn">Install</button><i class="material-icons ib-c" id="installClose">close</i></div>
+    <div class="ib" id="installBanner"><div class="ib-i"><img src="https://i.ibb.co/RkHqcjyT/1000104664.jpg" alt=""></div><div class="ib-t">Install My Premium YouTube</div><button class="ib-b" id="installBtn">Install</button><i class="material-icons ib-c" id="installClose">close</i></div>
 
     <!-- প্রোফাইল -->
     <div id="profile">
         <div class="pr-h"><i class="material-icons" id="backProf" style="font-size:28px">arrow_back</i><h3 id="profHeadTitle">My Profile</h3><i class="material-icons" id="profEditBtn" style="font-size:24px;color:var(--blue)">edit</i></div>
         <div class="pr-ban">
-            <div class="pr-aw"><img id="profImg" class="pr-av" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23e0e0e0' width='100' height='100'/%3E%3Ccircle cx='50' cy='38' r='18' fill='%23bdbdbd'/%3E%3Cellipse cx='50' cy='85' rx='30' ry='22' fill='%23bdbdbd'/%3E%3C/svg%3E" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect fill=%22%23e0e0e0%22 width=%22100%22 height=%22100%22/%3E%3Ccircle cx=%2250%22 cy=%2238%22 r=%2218%22 fill=%22%23bdbdbd%22/%3E%3Cellipse cx=%2250%22 cy=%2285%22 rx=%2230%22 ry=%2222%22 fill=%22%23bdbdbd%22/%3E%3C/svg%3E'"><div class="pr-cam" id="camBtn"><i class="material-icons">photo_camera</i></div></div>
+            <div class="pr-aw"><img id="profImg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23e0e0e0' width='100' height='100'/%3E%3Ccircle cx='50' cy='38' r='18' fill='%23bdbdbd'/%3E%3Cellipse cx='50' cy='85' rx='30' ry='22' fill='%23bdbdbd'/%3E%3C/svg%3E" onerror="this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23e0e0e0' width='100' height='100'/%3E%3Ccircle cx='50' cy='38' r='18' fill='%23bdbdbd'/%3E%3Cellipse cx='50' cy='85' rx='30' ry='22' fill='%23bdbdbd'/%3E%3C/svg%3E'"><div class="pr-cam" id="camBtn"><i class="material-icons">photo_camera</i></div></div>
             <div class="pr-nm" id="profName">Guest</div>
             <div class="pr-em" id="profEmailTop">Tap to set up your profile</div>
         </div>
@@ -336,83 +336,55 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
     <script>
-    /* কপিরাইট প্রটেকশন */
     document.addEventListener('contextmenu',e=>{if(!e.target.matches('input,textarea,select'))e.preventDefault()});
     document.addEventListener('copy',e=>{if(!e.target.matches('input,textarea'))e.preventDefault()});
     document.addEventListener('cut',e=>e.preventDefault());
     document.addEventListener('dragstart',e=>e.preventDefault());
     document.addEventListener('keydown',e=>{if(e.ctrlKey&&['u','s','c','p','a'].includes(e.key))e.preventDefault();if(e.key==='F12')e.preventDefault();if(e.ctrlKey&&e.shiftKey&&['I','J','C'].includes(e.key))e.preventDefault()});
 
-    /* PWA ম্যানিফেস্ট */
+    const LOGO_URL='https://i.ibb.co/RkHqcjyT/1000104664.jpg';
+
     const mf={name:"My Premium YouTube",short_name:"Premium YT",description:"Watch videos offline",start_url:"./",display:"standalone",background_color:"#ffffff",theme_color:"#ff0000",icons:[{src:"icon.png",sizes:"512x512",type:"image/png",purpose:"any maskable"}]};
     const ml=document.createElement('link');ml.rel='manifest';ml.href=URL.createObjectURL(new Blob([JSON.stringify(mf)],{type:'application/json'}));document.head.appendChild(ml);
     if('serviceWorker' in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
     let dp;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();dp=e;document.getElementById('installBanner').classList.add('show')});
 
-    /* মূল কোড */
     function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3500)}
     const fc={apiKey:"AIzaSyA8lHi8CmWk1GAR5YzyNUCaI1nDPn2p9aw",authDomain:"my-you-tube-4b216.firebaseapp.com",databaseURL:"https://my-you-tube-4b216-default-rtdb.firebaseio.com",projectId:"my-you-tube-4b216",storageBucket:"my-you-tube-4b216.firebasestorage.app",messagingSenderId:"436495149968",appId:"1:436495149968:web:5096c57a7be9e17e4aa115"};
     const YK="AIzaSyAbXbNRqKPGJO8ShoFxgYBtMvBIiwqxUNA";
     firebase.initializeApp(fc);const auth=firebase.auth(),db=firebase.database(),sto=firebase.storage();
     let user=null,token='',query='Trending in Bangladesh',loading=false,curVid="",curTitle="",curChannel="",curThumb="",vRef=null,cRef=null,vList=[];
 
-    /* IndexedDB */
     const DB='mytube_dl',SV=2,ST='videos';let idb=null;
-    function odb(){return new Promise((r,j)=>{const q=indexedDB.open(DB,SV);q.onupgradeneeded=e=>{const d=e.target.result;if(!d.objectStoreNames.contains(ST))d.createObjectStore(ST,{keyPath:'id'})};q.onsuccess=e=>{idb=e.target.result;r(idb)};q.onerror=e=>j(e)})}
+    function odb(){return new Promise((r,j)=>{const q=indexedDB.open(DB,SV);q.onupgradeneeded=e=>{const d=e.target.result;if(!d.objectStoreNames.contains(ST))d.createObjectStore(ST,{keyPath:'id'})};q.onsuccess=e=>{idb=e.target.result;r(idb)};q.onerror=e=>j(e)} })}
     function dbP(d){return new Promise((r,j)=>{const t=idb.transaction(ST,'readwrite');t.objectStore(ST).put(d);t.oncomplete=()=>r();t.onerror=e=>j(e)})}
-    function dbG(i){return new Promise((r,j)=>{const t=idb.transaction(ST,'readonly');const g=t.objectStore(ST).get(i);g.onsuccess=()=>r(g.result);g.onerror=e=>j(e)})}
-    function dbD(i){return new Promise((r,j)=>{const t=idb.transaction(ST,'readwrite');t.objectStore(ST).delete(i);t.oncomplete=()=>r();t.onerror=e=>j(e)})}
-    function dbA(){return new Promise((r,j)=>{const t=idb.transaction(ST,'readonly');const g=t.objectStore(ST).getAll();g.onsuccess=()=>r(g.result);g.onerror=e=>j(e)})}
+    function dbG(i){return new Promise((r,j)=>{const t=idb.transaction(ST,'readonly');const g=t.objectStore(ST).get(i);g.onsuccess=()=>r(g.result);g.onerror=e=>j(e)}}
+    function dbD(i){return new Promise((r,j)=>{const t=idb.transaction(ST,'readwrite');t.objectStore(ST).delete(i);t.oncomplete=()=>r();t.onerror=e=>j(e)}}
+    function dbA(){return new Promise((r,j)=>{const t=idb.transaction(ST,'readonly');const g=t.objectStore(ST).getAll();g.onsuccess=()=>r(g.result);g.onerror=e=>j(e)}}
     function fs(b){if(b<1024)return b+' B';if(b<1048576)return(b/1024).toFixed(1)+' KB';return(b/1048576).toFixed(1)+' MB'}
     async function ub(){const a=await dbA();const c=a.length;const b=document.getElementById('nbadge'),p=document.getElementById('pbadge');if(c>0){b.textContent=c;b.classList.add('show');p.textContent=c;p.style.display='inline'}else{b.classList.remove('show');p.style.display='none'}}
     async function td(u){try{const r=await fetch(u);const b=await r.blob();return await new Promise(r=>{const f=new FileReader();f.onload=()=>r(f.result);f.readAsDataURL(b)})}catch(e){return u}}
-
-    /* প্রোফাইল লোড */
-    function lp(d){d=d||{};document.getElementById('profName').textContent=d.fullName||d.email?.split('@')[0]||'Guest';document.getElementById('profEmailTop').textContent=d.email||'Tap to set up';const img=document.getElementById('profImg');if(d.profilePic){img.src=d.profilePic;img.onerror=()=>{img.src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23e0e0e0' width='100' height='100'/%3E%3Ccircle cx='50' cy='38' r='18' fill='%23bdbdbd'/%3E%3Cellipse cx='50' cy='85' rx='30' ry='22' fill='%23bdbdbd'/%3E%3C/svg%3E"}}else{img.src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23e0e0e0' width='100' height='100'/%3E%3Ccircle cx='50' cy='38' r='18' fill='%23bdbdbd'/%3E%3Cellipse cx='50' cy='85' rx='30' ry='22' fill='%23bdbdbd'/%3E%3C/svg%3E"}
+    function lp(d){d=d||{};document.getElementById('profName').textContent=d.fullName||d.email?.split('@')[0]||'Guest';document.getElementById('profEmailTop').textContent=d.email||'Tap to set up';const img=document.getElementById('profImg');if(d.profilePic){img.src=d.profilePic;img.onerror=()=>{img.src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23e0e0e0' width='100' height='100'/%3E%3Ccircle cx='50' cy='38' r='18' fill='%23bdbdbd'/%3E%3Cellipse cx='50' cy='85' rx='30' ry='22' fill='%23bdbdbd'/%3E%3C/svg%3E"}}else{img.src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23e0e0e0' width='100' height='100'/%3E%3Ccircle cx='50' cy='38' r='18' fill='%23bdbdbd'/%3E%3Cellipse cx='50' cy='85' rx='30' ry='22' fill='%23bdbdbd'/%3E%3C/svg%3E"}}
     const sv=(id,v)=>{const e=document.getElementById(id);e.textContent=v||'Not set';e.classList.toggle('empty',!v)};sv('pvName',d.fullName);sv('pvEmail',d.email);sv('pvPhone',d.phone);sv('pvCountry',d.country);sv('pvDistrict',d.district);sv('pvAddress',d.address);sv('pvLang',d.language);document.getElementById('peName').value=d.fullName||'';document.getElementById('pePhone').value=d.phone||'';document.getElementById('peCountry').value=d.country||'';document.getElementById('peDistrict').value=d.district||'';document.getElementById('peAddress').value=d.address||'';document.getElementById('peLang').value=d.language||''}
 
-    /* ইনিশিয়ালাইজ */
     document.getElementById('grid').innerHTML='';
     odb().then(()=>{ub();fv(query)}).catch(e=>console.error(e));
     auth.onAuthStateChanged(u=>{user=u;if(u){document.getElementById('auth').style.display='none';document.getElementById('authLogin').style.display='none';db.ref('users/'+u.uid).on('value',s=>lp(s.val()))}else{document.getElementById('auth').style.display='flex';document.getElementById('authLogin').style.display='none';lp(null)}});
 
-    /* ফটো আপলোড - ফিক্স */
     document.getElementById('camBtn').addEventListener('click',()=>{if(!user)return toast('Sign in first');document.getElementById('fileInput').click()});
     document.getElementById('fileInput').addEventListener('change',async e=>{
         const f=e.target.files[0];if(!f)return;toast('Uploading photo...');
-        try{
-            /* প্রথমে ডাটা URL তৈরি করি */
-            const dataUrl=await new Promise((res,rej)=>{const fr=new FileReader();fr.onload=()=>res(fr.result);fr.onerror=rej;fr.readAsDataURL(f)});
-            /* তারপর Firebase এ আপলোড */
-            const ref=sto.ref('profile_pics/'+user.uid+'.jpg');
-            await ref.put(f);
-            const url=await ref.getDownloadURL();
-            await db.ref('users/'+user.uid).update({profilePic:url});
-            /* সাথে সাথে ডিসপ্লে আপডেট */
-            document.getElementById('profImg').src=dataUrl;
-            toast('Photo updated!');
-        }catch(err){console.error(err);toast('Upload failed!')}
+        try{const dataUrl=await new Promise((res,rej)=>{const fr=new FileReader();fr.onload=()=>res(fr.result);fr.onerror=rej;fr.readAsDataURL(f)});const ref=sto.ref('profile_pics/'+user.uid+'.jpg');await ref.put(f);const url=await ref.getDownloadURL();await db.ref('users/'+user.uid).update({profilePic:url});document.getElementById('profImg').src=dataUrl;toast('Photo updated!')}catch(err){console.error(err);toast('Upload failed!')}
         e.target.value='';
     });
 
-    /* এডিট/সেভ */
-    document.getElementById('profEditBtn').addEventListener('click',te);
-    document.getElementById('editProfBtn').addEventListener('click',te);
-    document.getElementById('cancelEdit').addEventListener('click',te);
-    document.getElementById('saveEdit').addEventListener('click',async()=>{
-        if(!user)return;const data={fullName:document.getElementById('peName').value.trim(),phone:document.getElementById('pePhone').value.trim(),country:document.getElementById('peCountry').value,district:document.getElementById('peDistrict').value.trim(),address:document.getElementById('peAddress').value.trim(),language:document.getElementById('peLang').value,updatedAt:Date.now()};try{await db.ref('users/'+user.uid).update(data);te();toast('Profile saved!')}catch(e){toast('Failed to save')}
-    });
-    function te(){const v=document.getElementById('profViewMode'),e=document.getElementById('profEditMode'),h=document.getElementById('profHeadTitle');const s=e.style.display==='none';v.style.display=s?'none':'';e.style.display=s?'':'none';h.textContent=s?'Edit Profile':'My Profile'}
-
-    /* স্প্ল্যাশ */
     document.getElementById('spDl').addEventListener('click',()=>{if(dp)dp.prompt();else{const a=document.createElement('a');a.href='https://my-premium-you-tube.vercel.app/';a.target='_blank';a.click()}});
     document.getElementById('spSkip').addEventListener('click',()=>{document.getElementById('splash').classList.add('hide');setTimeout(()=>document.getElementById('splash').style.display='none',400)});
     document.getElementById('installBtn').addEventListener('click',()=>{if(dp){dp.prompt();dp.userChoice.then(()=>{dp=null;document.getElementById('installBanner').classList.remove('show')})}});
     document.getElementById('installClose').addEventListener('click',()=>document.getElementById('installBanner').classList.remove('show'));
 
-    /* রেজিস্ট্রেশন */
     document.getElementById('signupBtn').addEventListener('click',async()=>{
-        const n=document.getElementById('regName').value.trim(),em=document.getElementById('regEmail').value.trim(),ph=document.getElementById('regPhone').value.trim(),co=document.getElementById('regCountry').value,di=document.getElementById('regDistrict').value.trim(),la=document.getElementById('regLang').value,ad=document.getElementById('regAddress').value.trim(),pa=document.getElementById('regPass').value,er=document.getElementById('errMsg');
+        const n=document.getElementById('regName').value.trim(),em=document.getElementById('regEmail').value.trim(),ph=document.getElementById('regPhone').value.trim(),co=document.getElementById('regCountry').value,di=document.getElementById('regDistrict').value.trim(),la=document.getElementById('regLang').value,ad=document.getElementById('regAddress').value.trim(),pa=document.getElementById('pass').value,er=document.getElementById('errMsg');
         if(!n||!em||!ph||!co||!di||!la||!pa){er.textContent='All required fields must be filled';return}
         try{const c=await auth.createUserWithEmailAndPassword(em,pa);await db.ref('users/'+c.user.uid).set({email:em,fullName:n,phone:ph,country:co,district:di,language:la,address:ad,createdAt:Date.now()});er.textContent=''}catch(e){er.textContent=e.message}
     });
@@ -421,7 +393,6 @@
     document.getElementById('loginBtn').addEventListener('click',()=>{auth.signInWithEmailAndPassword(document.getElementById('loginEmail').value,document.getElementById('loginPass').value).then(()=>{document.getElementById('authLogin').style.display='none';document.getElementById('splash').classList.add('hide');setTimeout(()=>document.getElementById('splash').style.display='none',400);toast('Welcome back!')}).catch(e=>document.getElementById('errMsg2').textContent=e.message)});
     document.getElementById('signOutBtn').addEventListener('click',()=>{auth.signOut().then(()=>{document.getElementById('profile').style.display='none';toast('Signed out')})});
 
-    /* ইভেন্ট */
     document.addEventListener('click',async e=>{
         if(e.target.closest('#searchBtn')){document.getElementById('searchBar').style.display='flex';document.getElementById('searchInput').focus()}
         if(e.target.closest('#backSearch'))document.getElementById('searchBar').style.display='none';
@@ -458,18 +429,18 @@
     function ds(){const q=document.getElementById('searchInput').value;if(q.trim()){query=q;token='';document.getElementById('grid').innerHTML='';vList=[];fv(query);document.getElementById('searchBar').style.display='none'}}
     function dtc(){if(vRef)vRef.off();if(cRef)cRef.off()}
 
-    function pl(id,title,ch){curVid=id;curTitle=title;curChannel=ch;const f=vList.find(v=>v.id===id);curThumb=f?f.thumb:'';document.getElementById('player').style.display='block';document.getElementById('oplayer').style.display='none';document.getElementById('cmtSec').style.display='';document.getElementById('upSec').style.display='';document.getElementById('chRow').style.display='';document.getElementById('player').src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';document.getElementById('vTitle').innerText=title;document.getElementById('vChName').innerText=ch;document.getElementById('vChImg').src='https://i.pravatar.cc/36?u='+ch;document.getElementById('descText').innerText='Channel: '+ch;const d=new Date();const v=Math.floor(Math.random()*1000)+10;document.getElementById('vStats').innerText=document.getElementById('descStats').innerText=v+'K views — '+d.toLocaleDateString();document.getElementById('modal').style.display='flex';document.getElementById('modal').scrollTop=0;run(id);rdb();dtc();vRef=db.ref('videos/'+id);vRef.on('value',s=>{const d=s.val()||{},l=d.likes||{};document.getElementById('likeCnt').innerText=Object.keys(l).length;document.getElementById('likeBtn').classList.remove('liked');if(user){if(l[user.uid])document.getElementById('likeBtn').classList.add('liked');document.getElementById('subBtn').classList.toggle('subbed',!!(d.subscribers||{})[user.uid]);document.getElementById('subBtn').innerText=(d.subscribers||{})[user.uid]?'Subscribed':'Subscribe'}});cRef=db.ref('videos/'+id+'/comments');cRef.on('value',s=>{const list=document.getElementById('cmtList');list.innerHTML='';const c=s.val();let n=0;if(c){Object.entries(c).sort((a,b)=>b[1].timestamp-a[1].timestamp).forEach(([k,v])=>{n++;list.innerHTML+='<div class="cm"><img src="https://i.pravatar.cc/32?u='+v.userId+'"><div><div class="cmu">'+v.username+' — '+ts(v.timestamp)+'</div><p>'+v.text+'</p></div></div>'})}document.getElementById('cmtCnt').innerText=n})}
+    function pl(id,title,ch){curVid=id;curTitle=title;curChannel=ch;const f=vList.find(v=>v.id===id);curThumb=f?f.thumb:'';document.getElementById('player').style.display='block';document.getElementById('oplayer').style.display='none';document.getElementById('cmtSec').style.display='';document.getElementById('upSec').style.display='';document.getElementById('chRow').style.display='';document.getElementById('player').src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';document.getElementById('vTitle').innerText=title;document.getElementById('vChName').innerText=ch;document.getElementById('vChImg').src='https://i.pravatar.cc/36?u='+ch;document.getElementById('descText').innerText='Channel: '+ch;const d=new Date();const v=Math.floor(Math.random()*1000)+10;document.getElementById('vStats').innerText=document.getElementById('descStats').innerText=v+'K views — '+d.toLocaleDateString();document.getElementById('modal').style.display='flex';document.getElementById('modal').scrollTop=0;run(id);rdb();dtc();vRef=db.ref('videos/'+id);vRef.on('value',s=>{const d=s.val()||{},l=d.likes||{};document.getElementById('likeCnt').innerText=Object.keys(l).length;document.getElementById('likeBtn').classList.remove('liked');if(user){if(l[user.uid])document.getElementById('likeBtn').classList.add('liked');document.getElementById('subBtn').classList.toggle('subbed',!!(d.subscribers||{})[user.uid]);document.getElementById('subBtn').innerText=(d.subscribers||{})[user.uid]?'Subscribed':'Subscribe'}});cRef=db.ref('videos/'+id+'/comments');cRef.on('value',s=>{const list=document.getElementById('cmtList');list.innerHTML='';const c=s.val();let n=0;if(c){Object.entries(c).sort((a,b)=>b[1].timestamp-a[1].timestamp).forEach(([k,v])=>{n++;list.innerHTML+='<div class="cm"><img src="https://i.pravatar.cc/32?u='+v.userId+'" style="width:36px;height:36px;border-radius:50%;object-fit:cover"><div><div class="cmu">'+v.username+' — '+ts(v.timestamp)+'</div><p>'+v.text+'</p></div></div>'})}document.getElementById('cmtCnt').innerText=n})}
     function tlk(){if(!user)return toast('Sign in');const r=db.ref('videos/'+curVid);r.child('likes/'+user.uid).once('value',s=>{if(s.exists())r.child('likes/'+user.uid).remove();else{r.child('likes/'+user.uid).set(true);r.child('dislikes/'+user.uid).remove()}})}
     function tdl(){if(!user)return toast('Sign in');const r=db.ref('videos/'+curVid);r.child('dislikes/'+user.uid).once('value',s=>{if(s.exists())r.child('dislikes/'+user.uid).remove();else{r.child('dislikes/'+user.uid).set(true);r.child('likes/'+user.uid).remove()}})}
     function tsb(){if(!user)return toast('Sign in');const r=db.ref('videos/'+curVid);r.child('subscribers/'+user.uid).once('value',s=>{if(s.exists())r.child('subscribers/'+user.uid).remove();else r.child('subscribers/'+user.uid).set(true)})}
     function pc(){if(!user)return toast('Sign in');const t=document.getElementById('cmtInput').value.trim();if(!t)return;db.ref('videos/'+curVid+'/comments').push({userId:user.uid,username:user.email.split('@')[0],text:t,timestamp:Date.now()});document.getElementById('cmtInput').value='';toast('Posted!')}
-    function run(id){document.getElementById('upList').innerHTML='';vList.filter(v=>v.id!==id).slice(0,15).forEach(v=>{document.getElementById('upList').innerHTML+='<div class="uni" data-vid="'+v.id+'" data-t="'+v.title+'" data-ch="'+v.channel+'"><div class="unt2"><img src="'+v.thumb+'"></div><div class="unm"><h4>'+v.title+'</h4><p>'+v.channel+'</p></div></div>'})}
+    function run(id){document.getElementById('upList').innerHTML='';vList.filter(v=>v.id!==id).slice(0,15).forEach(v=>{document.getElementById('upList').innerHTML+='<div class="uni" data-vid="'+v.id+'" data-t="'+v.title+'" data-ch="'+v.channel+'"><div class="unt2"><img src="'+v.thumb+'"></div><div class="unm"><h4>'+v.title+'</h4><p>'+v.channel+'</p></div></div></div>'})}
     function ts(t){const s=Math.floor((Date.now()-t)/1000);if(s<60)return'just now';if(s<3600)return Math.floor(s/60)+'m ago';if(s<86400)return Math.floor(s/3600)+'h ago';return Math.floor(s/86400)+'d ago'}
     async function fv(q,m=false){if(loading)return;loading=true;let u='https://www.googleapis.com/youtube/v3/search?part=snippet&q='+encodeURIComponent(q)+'&key='+YK+'&type=video&maxResults=20';if(token)u+='&pageToken='+token;try{const r=await fetch(u);const d=await r.json();if(d.error)throw new Error(d.error.message);token=d.nextPageToken||'';sv(d.items)}catch(e){document.getElementById('grid').innerHTML='<p style="color:red;text-align:center;padding:20px">'+e.message+'</p>'}finally{loading=false;rdb()}}
-    function sv(videos){if(!videos)return;videos.forEach(v=>{const id=v.id.videoId;if(!id)return;vList.push({id,title:v.snippet.title,thumb:v.snippet.thumbnails.medium.url,channel:v.snippet.channelTitle});const d=document.createElement('div');d.className='card';d.dataset.vid=id;d.dataset.t=v.snippet.title;d.dataset.ch=v.snippet.channelTitle;d.innerHTML='<img class="thumb" src="'+v.snippet.thumbnails.high.url+'"><div class="details"><div class="avatar"><img src="https://i.pravatar.cc/36?u='+v.snippet.channelId+'"></div><div class="meta"><h3 class="title">'+v.snippet.title+'</h3><div class="info">'+v.snippet.channelTitle+' — '+Math.floor(Math.random()*500)+10+'K views</div></div></div>';document.getElementById('grid').appendChild(d)})}
+    function sv(videos){if(!videos)return;videos.forEach(v=>{const id=v.id.videoId;if(!id)return;vList.push({id,title:v.snippet.title,thumb:v.snippet.thumbnails.medium.url,channel:v.snippet.channelTitle});const d=document.createElement('div');d.className='card';d.dataset.vid=id;d.dataset.t=v.snippet.title;d.dataset.ch=v.snippet.channelTitle;d.innerHTML='<img class="thumb" src="'+v.snippet.thumbnails.high.url+'"><div class="details"><div class="avatar"><img src="https://i.pravatar.cc/36?u='+v.snippet.channelId+'" style="width:100%;height:100%;object-fit:cover"></div><div class="meta"><h3 class="title">'+v.snippet.title+'</h3><div class="info">'+v.snippet.channelTitle+' — '+Math.floor(Math.random()*500)+10+'K views</div></div></div></div>';document.getElementById('grid').appendChild(d)})}
     function odm(vid,title,ch,thumb){curVid=vid;curTitle=title;curChannel=ch;curThumb=thumb;document.getElementById('dmTitle').textContent=title;document.getElementById('impProg').classList.remove('show');document.getElementById('impFill').style.width='0%';document.getElementById('dlModal').style.display='flex'}
     function cdm(){document.getElementById('dlModal').style.display='none'}
-    async function imp(file){const pg=document.getElementById('impProg'),fl=document.getElementById('impFill'),pc=document.getElementById('impPct'),sz=document.getElementById('impSz');pg.classList.add('show');fl.style.width='0%';pc.textContent='0%';sz.textContent='Reading...';try{let td=curThumb;try{const vu=URL.createObjectURL(file);td=await new Promise(res=>{const v=document.createElement('video');v.preload='metadata';v.muted=true;v.src=vu;v.onloadeddata=()=>{v.currentTime=Math.min(v.duration,3)};v.onseeked=()=>{const c=document.createElement('canvas');c.width=320;c.height=180;c.getContext('2d').drawImage(v,0,0,320,180);res(c.toDataURL('image/jpeg',.7));URL.revokeObjectURL(vu)};v.onerror=()=>{URL.revokeObjectURL(vu);res(curThumb)};setTimeout(()=>{URL.revokeObjectURL(vu);res(curThumb)},5000)})}catch(e){}const total=file.size;let loaded=0;const intv=setInterval(()=>{loaded=Math.min(loaded+total/15,total);fl.style.width=Math.round(loaded/total*100)+'%';pc.textContent=Math.round(loaded/total*100)+'%';sz.textContent=fs(loaded)+' / '+fs(total);if(loaded>=total)clearInterval(intv)},150);const blob=new Blob([file],{type:file.type||'video/mp4'});clearInterval(intv);fl.style.width='100%';pc.textContent='100%';sz.textContent=fs(blob.size)+' saved';await dbP({id:curVid+'_imp_'+Date.now(),title:curTitle||file.name,channel:curChannel||'Local',thumb:td,blob:blob,quality:file.size<5*1024*1024?'audio':'720p',size:blob.size,timestamp:Date.now()});setTimeout(()=>{cdm();toast('Saved!');ub();rdb()},600)}catch(e){toast('Failed');pg.classList.remove('show')}}
+    async function imp(file){const pg=document.getElementById('impProg'),fl=document.getElementById('impFill'),pc=document.getElementById('impPct'),sz=document.getElementById('impSz');pg.classList.add('show');fl.style.width='0%';pc.textContent='0%';sz.textContent='Reading...';try{let td=curThumb;try{const vu=URL.createObjectURL(file);td=await new Promise(res=>{const v=document.createElement('video');v.preload='metadata';v.muted=true;v.src=vu;v.onloadeddata=()=>{v.currentTime=Math.min(v.duration,3)};v.onseeked=()=>{const c=document.createElement('canvas');c.width=320;c.height=180;c.getContext('2d').drawImage(v,0,0,320,180);res(c.toDataURL('image/jpeg',.7));URL.revokeObjectURL(vu)};v.onerror=()=>{URL.revokeObjectURL(vu);res(curThumb)};setTimeout(()=>{URL.revokeObjectURL(vu);res(curThumb)},5000})}catch(e){}const total=file.size;let loaded=0;const intv=setInterval(()=>{loaded=Math.min(loaded+total/15,total);fl.style.width=Math.round(loaded/total*100)+'%';pc.textContent=Math.round(loaded/total*100)+'%';sz.textContent=fs(loaded)+' / '+fs(total);if(loaded>=total)clearInterval(intv)},150);const blob=new Blob([file],{type:file.type||'video/mp4'});clearInterval(intv);fl.style.width='100%';pc.textContent='100%';sz.textContent=fs(blob.size)+' saved';await dbP({id:curVid+'_imp_'+Date.now(),title:curTitle||file.name,channel:curChannel||'Local',thumb:td,blob:blob,quality:file.size<5*1024*1024?'audio':'720p',size:blob.size,timestamp:Date.now()});setTimeout(()=>{cdm();toast('Saved!');ub();rdb()},600)}catch(e){toast('Failed');pg.classList.remove('show')}}
     async function rdb(){const all=await dbA();const ids=new Set(all.map(v=>v.id));document.querySelectorAll('.card').forEach(c=>{const ex=c.querySelector('.dl-badge');if(ids.has(c.dataset.vid)){if(!ex)c.querySelector('.thumb').insertAdjacentHTML('afterend','<div class="dl-badge"><i class="material-icons">download_done</i></div>')}else{if(ex)ex.remove()}});const s=[...ids].some(id=>id.startsWith(curVid));const btn=document.getElementById('dlBtn');btn.classList.toggle('dl-saved',s);btn.querySelector('span').textContent=s?'Saved':'Download'}
     async function rdl(){const all=await dbA();const list=document.getElementById('dlList');const empty=document.getElementById('edl');list.innerHTML='';if(!all.length){empty.style.display='flex'}else{empty.style.display='none';all.sort((a,b)=>b.timestamp-a.timestamp).forEach(v=>{const d=document.createElement('div');d.className='dli';d.innerHTML='<div class="dlt" data-vid="'+v.id+'"><img src="'+v.thumb+'"><div class="dov"><i class="material-icons">play_arrow</i></div></div><div class="dlm"><h4>'+v.title+'</h4><p>'+(v.quality||'').toUpperCase()+' — '+fs(v.size)+'</p></div><button class="dbtn" data-del="'+v.id+'"><i class="material-icons">delete_outline</i></button>';list.appendChild(d)})}}
     async function po(vid){const data=await dbG(vid);if(!data||!data.blob)return toast('Not found');const bu=URL.createObjectURL(data.blob);const op=document.getElementById('oplayer'),ip=document.getElementById('player');ip.style.display='none';op.style.display='block';op.src=bu;op.play().catch(()=>{});document.getElementById('vTitle').innerText=data.title;document.getElementById('vChRow').style.display='none';document.getElementById('cmtSec').style.display='none';document.getElementById('upSec').style.display='none';document.getElementById('dlBtn').classList.add('dl-saved');document.getElementById('modal').style.display='flex';document.getElementById('modal').scrollTop=0}
