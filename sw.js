@@ -1,4 +1,4 @@
-var CACHE_NAME = 'mytube-v6';
+var CACHE_NAME = 'my premium you tube-v6';
 // config.js ক্যাশের লিস্টে যোগ করা হলো
 var URLS_TO_CACHE = ['./', './index.html', './config.js'];
 
