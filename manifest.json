@@ -1,6 +1,6 @@
 {
-  "name": "MyTube Premium",
-  "short_name": "MyTube",
+  "name": "My Premium YouTube",
+  "short_name": "My Premium YT",
   "description": "Premium YouTube experience with offline downloads",
   "start_url": "./",
   "display": "standalone",
