@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="bn" dir="ltr"><head>
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="google-site-verification" content="9xT0VU-o9quzSSQKCrrO1ua5OCRUFpr_J2cUe22tGzs">
+    <title>My Premium YouTube - মাই প্রিমিয়াম ইউটিউব - Watch Videos Online</title>
+    <meta name="description" content="My Premium YouTube - মাই প্রিমিয়াম ইউটিউব। Watch trending videos, shorts, download for offline. Best video platform in Bangladesh.">
+    <meta name="keywords" content="My Premium YouTube, মাই প্রিমিয়াম ইউটিউব, premium youtube, my premium youtube, video, bangla video, watch video online, download video, trending">
+    <meta name="author" content="My Premium YouTube">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://my-premium-you-tube.vercel.app/">
+    <meta property="og:title" content="My Premium YouTube - মাই প্রিমিয়াম ইউটিউব">
+    <meta property="og:description" content="Watch trending videos, shorts, download for offline. Best video platform.">
+    <meta property="og:url" content="https://my-premium-you-tube.vercel.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://my-premium-you-tube.vercel.app/icon.png">
+    <meta name="theme-color" content="#ff0000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="My Premium YT">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebApplication","name":"My Premium YouTube","alternateName":"মাই প্রিমিয়াম ইউটিউব","url":"https://my-premium-you-tube.vercel.app/","description":"Watch trending videos, shorts, download for offline","applicationCategory":"Entertainment","offers":{"@type":"Offer","price":"0","priceCurrency":"BDT"}}
+    </script>
+    <style>
+        *{-webkit-user-select:none!important;-moz-user-select:none!important;-ms-user-select:none!important;user-select:none!important;-webkit-touch-callout:none!important}
+        input,textarea{-webkit-user-select:text!important;-moz-user-select:text!important;-ms-user-select:text!important;user-select:text!important}
+        :root{--bg:#fff;--sf:#f2f2f2;--tx:#0f0f0f;--txs:#606060;--bd:#e5e5e5;--red:#ff0000;--blue:#065fd4;--blk:#0f0f0f;--green:#1e8e3e;--gold:#f5a623}
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:'Roboto',Arial,sans-serif;background:var(--bg);color:var(--tx);overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+        button,.material-icons{touch-action:manipulation;cursor:pointer;border:none;background:none;padding:0}
+        img{pointer-events:auto!important;-webkit-user-drag:none;user-drag:none}
+        .toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#323232;color:#fff;padding:12px 24px;border-radius:8px;font-size:14px;z-index:9999;opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap;max-width:92%;text-align:center}
+        .toast.show{opacity:1}
+
+        /* ===== স্প্ল্যাশ স্ক্রিন ===== */
+        #splash{position:fixed;inset:0;background:linear-gradient(145deg,#0a0a0a 0%,#1a1a2e 50%,#0f0f0f 100%);z-index:500;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;text-align:center;transition:opacity .4s}
+        #splash.hide{opacity:0;pointer-events:none}
+        .sp-logo{width:110px;height:110px;background:var(--red);border-radius:26px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;box-shadow:0 8px 40px rgba(255,0,0,.35);position:relative;overflow:hidden}
+        .sp-logo::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent 40%,rgba(255,255,255,.15) 50%,transparent 60%);animation:spShine 3s infinite}
+        @keyframes spShine{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+        .sp-logo svg{width:60px;height:60px;fill:#fff;position:relative;z-index:1}
+        .sp-name{font-size:30px;font-weight:900;color:#fff;margin-bottom:2px;letter-spacing:-.5px}
+        .sp-name em{font-style:normal;color:var(--gold);font-size:14px;font-weight:500;display:block;letter-spacing:1px;margin-top:2px}
+        .sp-tag{font-size:12px;color:rgba(255,255,255,.35);margin-bottom:36px;letter-spacing:.5px}
+        .sp-dl{width:100%;max-width:300px;padding:16px;border-radius:28px;background:var(--red);color:#fff;font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 4px 24px rgba(255,0,0,.4);transition:transform .15s}
+        .sp-dl:active{transform:scale(.96)}
+        .sp-dl .material-icons{font-size:24px}
+        .sp-skip{margin-top:24px;color:rgba(255,255,255,.3);font-size:13px;background:none;border:none;cursor:pointer;text-decoration:underline}
+        .sp-feats{display:flex;gap:20px;margin-top:44px;flex-wrap:wrap;justify-content:center}
+        .sp-f{display:flex;flex-direction:column;align-items:center;gap:5px;width:64px}
+        .sp-f .material-icons{font-size:26px;color:var(--red);opacity:.7}
+        .sp-f span{font-size:9px;color:rgba(255,255,255,.35);text-align:center;line-height:1.3}
+
+        /* ===== মেইন ===== */
+        header{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;position:sticky;top:0;background:var(--bg);z-index:100}
+        .logo{display:flex;align-items:center;gap:6px}
+        .logo-ic{width:30px;height:20px;background:var(--red);border-radius:4px;display:flex;align-items:center;justify-content:center}
+        .logo-ic svg{width:15px;height:15px;fill:#fff}
+        .logo-tx{font-size:16px;font-weight:700;letter-spacing:-.3px}
+        .logo-tx em{font-style:normal;color:var(--gold);font-size:9px;font-weight:500;vertical-align:super;margin-left:1px}
+        .h-i{display:flex;gap:14px;align-items:center}
+        .h-i .material-icons{font-size:24px;color:var(--tx)}
+        .search-bar{display:none;position:fixed;top:0;left:0;width:100%;height:56px;background:var(--bg);z-index:150;padding:8px 12px;align-items:center;gap:12px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+        .search-input{flex:1;background:var(--sf);border:1px solid var(--bd);padding:10px 12px;border-radius:8px;font-size:16px;outline:none}
+        .search-input:focus{border-color:var(--blue)}
+        .grid{padding:16px 0}
+        .card{margin-bottom:24px;cursor:pointer;position:relative}
+        .card img.thumb{width:100%;border-radius:12px;display:block}
+        .dl-badge{position:absolute;top:8px;right:8px;background:rgba(0,0,0,.75);color:#fff;border-radius:4px;padding:2px 8px;font-size:10px;display:flex;align-items:center;gap:3px;font-weight:500}
+        .dl-badge .material-icons{font-size:13px}
+        .card .details{display:flex;padding:12px 16px 0;gap:12px}
+        .card .avatar{width:36px;height:36px;border-radius:50%;background:var(--sf);overflow:hidden;flex-shrink:0}
+        .card .avatar img{width:100%;height:100%;object-fit:cover}
+        .card .meta{flex:1;overflow:hidden}
+        .card .title{font-size:14px;font-weight:500;margin:0 0 4px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+        .card .info{font-size:12px;color:var(--txs)}
+        .bnav{position:fixed;bottom:0;width:100%;background:var(--bg);border-top:1px solid var(--bd);display:flex;justify-content:space-around;align-items:flex-start;padding:6px 0 8px;z-index:100;height:56px}
+        .ni{display:flex;flex-direction:column;align-items:center;gap:2px;width:20%;padding:4px 0 0;color:var(--txs);cursor:pointer;position:relative}
+        .ni.act{color:var(--tx)}.ni.act .nl{font-weight:600}
+        .nl{font-size:10px;line-height:1.2}
+        .nic{display:flex;align-items:center;justify-content:center;height:28px;width:28px}
+        .nic svg{width:24px;height:24px;fill:currentColor}
+        .ni.ci{width:20%;padding-top:0;align-items:center}
+        .cc{width:36px;height:36px;background:var(--tx);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:2px;transition:transform .15s}
+        .cc:active{transform:scale(.92)}
+        .cc svg{width:20px;height:20px;fill:var(--bg)}
+        .ii,.ia{display:none}.ni:not(.act) .ii{display:block}.ni.act .ia{display:block}
+        .nbadge{position:absolute;top:0;right:calc(50% - 22px);background:var(--red);color:#fff;font-size:9px;font-weight:700;padding:1px 5px;border-radius:8px;min-width:14px;text-align:center;line-height:1.4;display:none}
+        .nbadge.show{display:block}
+
+        /* অথ */
+        #auth,#authLogin{display:none;position:fixed;inset:0;background:var(--bg);z-index:200;justify-content:center;align-items:center;flex-direction:column;overflow-y:auto}
+        .af{background:var(--sf);padding:28px 24px;border-radius:12px;width:90%;max-width:380px}
+        .af h2{margin:0 0 4px;text-align:center;display:flex;align-items:center;justify-content:center;gap:8px;font-size:20px}
+        .af h2 .al{width:24px;height:17px;background:var(--red);border-radius:3px;display:flex;align-items:center;justify-content:center}
+        .af h2 .al svg{width:12px;height:12px;fill:#fff}
+        .af .sub{font-size:13px;color:var(--txs);text-align:center;margin-bottom:20px}
+        .af input,.af select,.af textarea{width:100%;padding:12px;margin-bottom:10px;border:1px solid var(--bd);border-radius:8px;font-size:15px;outline:none;background:#fff;font-family:inherit;-webkit-appearance:none;appearance:none}
+        .af input:focus,.af select:focus{border-color:var(--blue)}
+        .af button{width:100%;padding:12px;border-radius:20px;font-size:16px;font-weight:500;cursor:pointer;margin-bottom:10px}
+        .bl{background:var(--red);color:#fff}.bl:active{background:#cc0000}
+        .bs{background:transparent;border:1px solid var(--bd);color:var(--tx)}
+
+        #modal{display:none;position:fixed;inset:0;background:var(--bg);z-index:101;flex-direction:column;overflow-y:auto}
+        .pw{position:sticky;top:0;background:#000;z-index:10;width:100%}
+        #player{width:100%;aspect-ratio:16/9;display:block;border:none}
+        .op{width:100%;aspect-ratio:16/9;background:#000;display:none}
+        .cb{position:absolute;top:10px;right:10px;background:rgba(0,0,0,.6);color:#fff;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;z-index:11}
+        .vb{padding:12px 16px;border-bottom:1px solid var(--bd)}
+        .vt{margin:0 0 8px;font-size:16px;font-weight:600;line-height:1.4}
+        .vs{font-size:12px;color:var(--txs);margin-bottom:14px}
+        .cr{display:flex;align-items:center;margin-bottom:16px}
+        .cr img{width:40px;height:40px;border-radius:50%;margin-right:12px;object-fit:cover}
+        .ci2{flex:1}.cn{font-size:14px;font-weight:500;margin:0}.cs{font-size:12px;color:var(--txs);margin:0}
+        .sbtn{background:var(--blk);color:#fff;padding:10px 16px;border-radius:20px;font-weight:600;font-size:14px;text-transform:uppercase}
+        .acts{display:flex;gap:8px;overflow-x:auto;padding:12px 0;scrollbar-width:none;align-items:center}
+        .acts::-webkit-scrollbar{display:none}
+        .ag{display:flex;background:var(--sf);border-radius:20px;overflow:hidden;align-items:center;height:36px;flex-shrink:0}
+        .ag .ab{background:transparent;padding:0 16px;height:100%}
+        .ab{display:flex;align-items:center;justify-content:center;gap:6px;background:var(--sf);border-radius:20px;padding:0 16px;font-size:14px;font-weight:500;color:var(--tx);white-space:nowrap;height:36px;flex-shrink:0}
+        .ab .material-icons{font-size:22px}
+        .ab.dl-saved{color:var(--green)}
+        .desc{background:var(--sf);border-radius:12px;padding:12px;font-size:13px;cursor:pointer;line-height:1.4;margin-top:4px}
+        .ds{font-weight:600;margin-bottom:4px}
+        .dt2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+        .cmts{padding:16px;border-bottom:1px solid var(--bd)}
+        .ci3{display:flex;gap:12px;align-items:center;margin-bottom:20px}
+        .ci3 input{flex:1;border:none;border-bottom:1px solid var(--bd);padding:8px 0;outline:none;font-size:14px;background:transparent}
+        .ci3 button{background:var(--blue);color:#fff;padding:8px 16px;border-radius:20px;font-weight:500;display:none}
+        .cm{display:flex;gap:12px;margin-bottom:16px}
+        .cm img{width:36px;height:36px;border-radius:50%;object-fit:cover}
+        .cm p{margin:0;font-size:14px;line-height:1.4}
+        .cmu{font-size:12px;font-weight:500;color:var(--txs);margin-bottom:2px}
+        .un{padding:16px}.unt{font-size:16px;font-weight:500;margin-bottom:16px}
+        .uni{display:flex;gap:8px;margin-bottom:12px;cursor:pointer}
+        .unt2{width:160px;height:90px;border-radius:8px;overflow:hidden;background:var(--sf);flex-shrink:0}
+        .unt2 img{width:100%;height:100%;object-fit:cover}
+        .unm h4{margin:0 0 4px;font-size:14px;font-weight:500;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+        .unm p{margin:0;font-size:12px;color:var(--txs)}
+
+        /* প্রোফাইল */
+        #profile{display:none;position:fixed;inset:0;background:var(--bg);z-index:150;flex-direction:column;overflow-y:auto}
+        .pr-h{display:flex;align-items:center;padding:12px 16px;gap:12px;border-bottom:1px solid var(--bd)}
+        .pr-h h3{flex:1;font-size:18px;margin:0}
+        .pr-ban{background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);padding:32px 20px 60px;text-align:center;position:relative}
+        .pr-aw{position:relative;display:inline-block;margin-bottom:10px}
+        .pr-av{width:90px;height:90px;border-radius:50%;object-fit:cover;border:4px solid var(--bg);display:block;background:var(--sf)}
+        .pr-cam{position:absolute;bottom:2px;right:2px;width:32px;height:32px;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid var(--bg);cursor:pointer}
+        .pr-cam .material-icons{font-size:16px}
+        .pr-nm{font-size:20px;font-weight:700;color:#fff;margin-bottom:2px}
+        .pr-em{font-size:13px;color:rgba(255,255,255,.7)}
+        .pr-sec{padding:0 16px;margin-top:-30px;position:relative;z-index:1}
+        .pr-card{background:var(--bg);border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,.1);padding:16px;margin-bottom:12px}
+        .pr-card h4{font-size:13px;font-weight:500;color:var(--txs);margin:0 0 12px;text-transform:uppercase;letter-spacing:.5px}
+        .pf-row{display:flex;align-items:center;padding:10px 0;border-bottom:1px solid var(--sf);gap:12px}
+        .pf-row:last-child{border-bottom:none}
+        .pf-ic{width:36px;height:36px;border-radius:50%;background:var(--sf);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .pf-ic .material-icons{font-size:18px;color:var(--blue)}
+        .pf-lb{font-size:11px;color:var(--txs);margin-bottom:1px}
+        .pf-vl{font-size:15px;color:var(--tx)}.pf-vl.empty{color:var(--txs);font-style:italic}
+        .pe-in{width:100%;padding:10px 0;border:none;border-bottom:1px solid var(--bd);font-size:15px;outline:none;background:transparent;font-family:inherit;color:var(--tx)}
+        .pe-in:focus{border-color:var(--blue)}
+        .pe-sel{width:100%;padding:10px 0;border:none;border-bottom:1px solid var(--bd);font-size:15px;outline:none;background:transparent;font-family:inherit;color:var(--tx);-webkit-appearance:none;appearance:none}
+        .pe-ara{width:100%;padding:10px 0;border:none;border-bottom:1px solid var(--bd);font-size:15px;outline:none;background:transparent;font-family:inherit;color:var(--tx);resize:none;min-height:60px}
+        .pr-btns{display:flex;gap:10px;padding:16px}
+        .pr-btns button{flex:1;padding:12px;border-radius:20px;font-size:15px;font-weight:500}
+        .btn-sv{background:var(--blue);color:#fff}
+        .btn-cl{background:var(--sf);color:var(--tx)}
+        .btn-ed{width:100%;padding:12px;border-radius:20px;font-size:15px;font-weight:500;background:var(--sf);color:var(--blue);margin:0 16px 12px}
+        .btn-so{width:calc(100% - 32px);margin:0 16px 16px;padding:12px;border-radius:20px;font-size:15px;font-weight:500;background:#fce8e6;color:#d93025}
+        .pentry{display:flex;align-items:center;padding:14px 20px;gap:16px;cursor:pointer;border-top:1px solid var(--bd)}
+        .pentry:active{background:var(--sf)}
+        .pentry span{flex:1;font-size:15px}
+
+        /* ডাউনলোড */
+        #dlPage{display:none;position:fixed;inset:0;background:var(--bg);z-index:150;flex-direction:column;overflow-y:auto}
+        .dlh{display:flex;align-items:center;padding:12px 16px;border-bottom:1px solid var(--bd);gap:12px}
+        .dlh h3{flex:1;margin:0;font-size:18px}
+        .dli{display:flex;padding:12px 16px;gap:12px;border-bottom:1px solid var(--bd);align-items:center}
+        .dlt{width:160px;height:90px;border-radius:8px;overflow:hidden;background:var(--sf);flex-shrink:0;position:relative}
+        .dlt img{width:100%;height:100%;object-fit:cover}
+        .dov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.3);opacity:0;transition:opacity .2s}
+        .dli:active .dov{opacity:1}
+        .dov .material-icons{font-size:40px;color:#fff}
+        .dlm{flex:1;overflow:hidden;min-width:0}
+        .dlm h4{margin:0 0 4px;font-size:14px;font-weight:500;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+        .dlm p{margin:0;font-size:12px;color:var(--txs)}
+        .dbtn{color:var(--txs);padding:8px;border-radius:50%}.dbtn:active{color:var(--red)}
+        .edl{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 20px;color:var(--txs)}
+        .edl .material-icons{font-size:72px;margin-bottom:16px;opacity:.25}
+        .edl h4{margin:0 0 8px;color:var(--tx);font-size:18px}
+        .edl p{margin:0;font-size:14px;text-align:center;line-height:1.5}
+
+        /* ডাউনলোড মোডাল */
+        #dlModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:300;justify-content:center;align-items:flex-end}
+        .dms{background:var(--bg);border-radius:16px 16px 0 0;width:100%;max-width:500px;max-height:90vh;overflow-y:auto;padding-bottom:24px}
+        .dmh2{width:40px;height:4px;background:var(--bd);border-radius:2px;margin:10px auto 0}
+        .dmhd{padding:16px 20px 12px}.dmhd h3{margin:0 0 6px;font-size:18px}.dmhd p{margin:0;font-size:13px;color:var(--txs);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.4}
+        .mc{margin:0 16px 12px;border:1px solid var(--bd);border-radius:14px;overflow:hidden}
+        .mch{display:flex;align-items:center;padding:16px;gap:14px}
+        .mci{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .mci.red{background:#fce8e6;color:var(--red)}.mci.green{background:#e6f4ea;color:var(--green)}.mci.blue{background:#e8f0fe;color:var(--blue)}.mci.orange{background:#fef7e0;color:#e37400}
+        .mci .material-icons{font-size:24px}
+        .mct{flex:1;min-width:0}.mct strong{display:block;font-size:15px;margin-bottom:2px}.mct span{font-size:13px;color:var(--txs);line-height:1.3}
+        .mct .best{color:var(--green);font-weight:500;font-size:12px;display:inline-block;margin-top:3px;background:#e6f4ea;padding:1px 8px;border-radius:8px}
+        .mch .material-icons.arr{font-size:20px;color:var(--txs)}
+        .imp-area{margin:0 16px 12px;border:2px dashed var(--bd);border-radius:14px;padding:28px 20px;text-align:center;cursor:pointer;transition:.2s}
+        .imp-area:active{border-color:var(--blue);background:#f8fbff}
+        .imp-area .material-icons{font-size:40px;color:var(--blue);margin-bottom:10px}
+        .imp-area p{font-size:14px;color:var(--txs);margin:0;line-height:1.5}
+        .imp-prog{margin:0 16px 12px;display:none}.imp-prog.show{display:block}
+        .ipb{height:6px;background:var(--sf);border-radius:3px;overflow:hidden;margin-bottom:8px}
+        .ipf{height:100%;background:var(--green);border-radius:3px;transition:width .3s;width:0%}
+        .iptx{font-size:13px;color:var(--txs);display:flex;justify-content:space-between}
+        .dm-can{width:calc(100% - 32px);margin:8px 16px 0;padding:12px;border-radius:20px;background:var(--sf);color:var(--tx);font-size:15px;font-weight:500;text-align:center}
+
+        /* ইনস্টল ব্যানার */
+        .ib{display:none;position:fixed;bottom:56px;left:0;right:0;background:var(--bg);border-top:1px solid var(--bd);padding:12px 16px;z-index:99;align-items:center;gap:12px;box-shadow:0 -2px 8px rgba(0,0,0,.08)}
+        .ib.show{display:flex}
+        .ib-i{width:36px;height:36px;border-radius:8px;background:var(--red);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .ib-i svg{width:18px;height:18px;fill:#fff}
+        .ib-t{flex:1;font-size:13px;color:var(--tx);font-weight:500}
+        .ib-b{background:var(--blue);color:#fff;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:600}
+        .ib-c{color:var(--txs);padding:8px}
+    </style>
+<link rel="manifest" href="blob:https://my-premium-you-tube.vercel.app/53394581-2f5c-4b31-813e-1dbaaa23b235" /></head>
+<body>
+    <input type="file" id="fileInput" accept="image/*" style="display:none">
+    <input type="file" id="vidImport" accept="video/*,.mkv,.avi,.mov,.flv,.wmv,.webm,.3gp" style="display:none">
+    <div id="toast" class="toast"></div>
+    <div id="searchBar" class="search-bar"><i class="material-icons" id="backSearch" style="font-size:28px">arrow_back</i><input type="text" id="searchInput" class="search-input" placeholder="Search videos..."><i class="material-icons" id="doSearch" style="font-size:28px">search</i></div>
+
+    <!-- ===== স্প্ল্যাশ স্ক্রিন ===== -->
+    <div id="splash">
+        <div class="sp-logo"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></path></svg></div>
+        <div class="sp-name">My Premium<em>YOUTUBE</em></div>
+        <div class="sp-tag">WATCH · DOWNLOAD · SHARE</div>
+        <button class="sp-dl" id="spDl"><i class="material-icons">download</i> Download App</button>
+        <button class="sp-skip" id="spSkip">Continue to website</button>
+        <div class="sp-feats">
+            <div class="sp-f"><i class="material-icons">play_circle</i><span>Videos</span></div>
+            <div class="sp-f"><i class="material-icons">slow_motion_video</i><span>Shorts</span></div>
+            <div class="sp-f"><i class="material-icons">download</i><span>Offline</span></div>
+            <div class="sp-f"><i class="material-icons">hd</i><span>HD Quality</span></div>
+        </div>
+    </div>
+
+    <!-- ===== রেজিস্ট্রেশন ===== -->
+    <div id="auth" style="display: flex;">
+        <div class="af">
+            <h2><div class="al"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></path></svg></div> My Premium YouTube</h2>
+            <p class="sub">Create account to get started</p>
+            <input type="text" id="regName" placeholder="Full Name *">
+            <input type="email" id="regEmail" placeholder="Email Address *">
+            <input type="tel" id="regPhone" placeholder="Phone Number *">
+            <select id="regCountry"><option value="" selected>Select Country *</option><option value="Bangladesh">Bangladesh</option><option value="India">India</option><option value="Pakistan">Pakistan</option><option value="United States">United States</option><option value="United Kingdom">United Kingdom</option><option value="Saudi Arabia">Saudi Arabia</option><option value="UAE">UAE</option><option value="Malaysia">Malaysia</option><option value="Other">Other</option></select>
+            <input type="text" id="regDistrict" placeholder="District / City *">
+            <select id="regLang"><option value="" selected>Select Language *</option><option value="বাংলা">বাংলা</option><option value="English">English</option><option value="हिन्दी">हिन्दी</option><option value="اردو">اردو</option><option value="العربية">العربية</option></select>
+            <textarea id="regAddress" placeholder="Full Address" style="width:100%;padding:12px;margin-bottom:10px;border:1px solid var(--bd);border-radius:8px;font-size:15px;outline:none;background:#fff;resize:none;min-height:50px;font-family:inherit"></textarea>
+            <input type="password" id="regPass" placeholder="Password *">
+            <button class="bl" id="signupBtn">Create Account</button>
+            <button class="bs" id="loginToggle">Already have an account? Sign In</button>
+            <p id="errMsg" style="color:var(--red);font-size:12px;text-align:center"></p>
+        </div>
+    </div>
+    <div id="authLogin" style="display: none;">
+        <div class="af">
+            <h2><div class="al"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></path></svg></div> Welcome Back</h2>
+            <p class="sub">Sign in to My Premium YouTube</p>
+            <input type="email" id="loginEmail" placeholder="Email Address">
+            <input type="password" id="loginPass" placeholder="Password">
+            <button class="bl" id="loginBtn">Sign In</button>
+            <button class="bs" id="signupToggle">Don't have an account? Sign Up</button>
+            <p id="errMsg2" style="color:var(--red);font-size:12px;text-align:center"></p>
+        </div>
+    </div>
+
+    <!-- ===== মেইন অ্যাপ ===== -->
+    <div id="app">
+        <header>
+            <div class="logo" id="homeBtn"><div class="logo-ic"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></path></svg></div><div class="logo-tx">My Premium<em>YT</em></div></div>
+            <div class="h-i"><i class="material-icons" id="searchBtn">search</i><i class="material-icons" id="profBtn">account_circle</i></div>
+        </header>
+        <main id="grid" class="grid"><div class="card" data-vid="dS2rp7XaBBQ" data-t="🔥Bangladesh makes legends, not names #shorts #trollface" data-ch="KaluNX"><img class="thumb" src="https://i.ytimg.com/vi/dS2rp7XaBBQ/hqdefault.jpg" /><div class="details"><div class="avatar"><img src="https://i.pravatar.cc/36?u=UCn1Dto9YHT5QsskxuPKd6Kw" /></div><div class="meta"><h3 class="title">🔥Bangladesh makes legends, not names #shorts #trollface</h3><div class="info">KaluNX — 5710K views</div></div></div></div><div class="card" data-vid="TATJNkRoDJQ" data-t="কিভাবে ট্রেডিং শুরু করবেন | How To Start Trading | Complete Road Map | FREE Full Course ( PART 01)" data-ch="Trading Chart "><img class="thumb" src="https://i.ytimg.com/vi/TATJNkRoDJQ/hqdefault.jpg" /><div class="details"><div class="avatar"><img src="https://i.pravatar.cc/36?u=UCiGFPi9pZFjYPCoUGzEVy3Q" /></div><div class="meta"><h3 class="title">কিভাবে ট্রেডিং শুরু করবেন | How To Start Trading | Complete Road Map | FREE Full Course ( PART 01)</h3><div class="info">Trading Chart  — 48610K views</div></div></div></div><div class="card" data-vid="ApsOcYAc1r4" data-t="Son of Brazil Argentina fan of Bangladesh 😅🇧🇩 #trending #bangladesh #viral #football #comedy #shorts" data-ch="EDIT 77 🥏"><img class="thumb" src="https://i.ytimg.com/vi/ApsOcYAc1r4/hqdefault.jpg" /><div class="details"><div class="avatar"><img src="https://i.pravatar.cc/36?u=UCkw0Mf6JKlbnvuYXGVeK4Ag" /></div><div class="meta"><h3 class="title">Son of Brazil Argentina fan of Bangladesh 😅🇧🇩 #trending #bangladesh #viral #football #comedy #shorts</h3><div class="info">EDIT 77 🥏 — 22810K views</div></div></div></div><div class="card" data-vid="UgQSUcgymsg" data-t="ট্রেডিং এক ভয়াবহ জগৎ : পার্ট ১  | Case study | The untold of trading in Bangladesh" data-ch="YousuFix"><img class="thumb" src="https://i.ytimg.com/vi/UgQSUcgymsg/hqdefault.jpg" /><div class="details"><div class="avatar"><img src="https://i.pravatar.cc/36?u=UCpN6qjqBTg0OjWdQnjnnDOQ" /></div><div class="meta"><h3 class="title">ট্রেডিং এক ভয়াবহ জগৎ : পার্ট ১  | Case study | The untold of trading in Bangladesh</h3><div class="info">YousuFix — 15810K views</div></div></div></div><div class="card" data-vid="xsB6kf_0qEo" data-t="Bangladesh Flag Trend।Viral trend in tiktok।#shorts #shortsviral #shortfeed #flagtrend #bangladesh" data-ch="Srizila all vlogs."><img class="thumb" src="https://i.ytimg.com/vi/xsB6kf_0qEo/hqdefault.jpg" /><div class="details"><div class="avatar"><img src="https://i.pravatar.cc/36?u=UCQUc_dMRAtIyJUWX7yh0s0Q" /></div><div class="meta"><h3 class="title">Bangladesh Flag Trend।Viral trend in tiktok।#shorts #shortsviral #shortfeed #flagtrend #bangladesh</h3><div class="info">Srizila all vlogs. — 45910K views</div></div></div></div><div class="card" data-vid="I_rKZZIfZWw" data-t="5 reasons I LOVE Bangladesh 🇧🇩" data-ch="Brent Timm"><img class="thumb" src="https://i.ytimg.com/vi/I_rKZZIfZWw/hqdefault.jpg" /><div class="details"><div class="avatar"><img src="https://i.pravatar.cc/36?u=UCvmHeii_e1V-GtFZysLjiGg" /></div><div class="meta"><h3 class="title">5 reasons I LOVE Bangladesh 🇧🇩</h3><div class="info">Brent Timm — 37010K views</div></div></div></div><div class="card" data-vid="hLagnyDQmw8" data-t="বাংলাদেশের সেরা? Qoutex vs Pocket Option vs Olymp Trade" data-ch="Hisham Iqbal"><img class="thumb" src="https://i.ytimg.com/vi/hLagnyDQmw8/hqdefault.jpg" /><div class="details"><div class="avatar"><img src="https://i.pravatar.cc/36?u=UC9IyNMdBzUU1NetY5kItphA" /></div><div class="meta"><h3 class="title">বাংলাদেশের সেরা? Qoutex vs Pocket Option vs Olymp Trade</h3><div class="info">Hisham Iqbal — 3510K views</div></div></div></div><div class="card" data-vid="MWXSZqviyPI" data-t="কিভাবে ট্রেডিং শুরু করবেন?😥How To Start Trading? - Complete 5 Step || For Beginners Guide" data-ch="Trading Chart "><img class="thumb" src="https://i.ytimg.com/vi/MWXSZqviyPI/hqdefault.jpg" /><div class="details"><div class="avatar"><img src="https://i.pravatar.cc/36?u=UCiGFPi9pZFjYPCoUGzEVy3Q" /></div><div class="meta"><h3 class="title">কিভাবে ট্রেডিং শুরু করবেন?😥How To Start Trading? - Complete 5 Step || For Beginners Guide</h3><div class="info">Trading Chart  — 42310K views</div></div></div></div><div class="card" data-vid="4t1FIdZAwps" data-t="This Crazy fan 🇧🇷 😅🔥#trending #bangladesh #viral #fyp #funny #shorts #worldcup #brazil" data-ch="UR Albe"><img class="thumb" src="https://i.ytimg.com/vi/4t1FIdZAwps/hqdefault.jpg" /><div class="details"><div class="avatar"><img src="https://i.pravatar.cc/36?u=UC1vYVcwt8bB6wMA6lpqbPyA" /></div><div class="meta"><h3 class="title">This Crazy fan 🇧🇷 😅🔥#trending #bangladesh #viral #fyp #funny #shorts #worldcup #brazil</h3><div class="info">UR Albe — 25210K views</div></div></div></div><div class="card" data-vid="z3fZ50wzJWs" data-t="Avarage Day In Bangladesh 💀 #shorts #youtubeshorts #countryballs #edit #bangladesh #trending" data-ch="Zero knowledge 50"><img class="thumb" src="https://i.ytimg.com/vi/z3fZ50wzJWs/hqdefault.jpg" /><div class="details"><div class="avatar"><img src="https://i.pravatar.cc/36?u=UC9wqZX_vMSzyJ57vWgNdlwg" /></div><div class="meta"><h3 class="title">Avarage Day In Bangladesh 💀 #shorts #youtubeshorts #countryballs #edit #bangladesh #trending</h3><div class="info">Zero knowledge 50 — 23610K views</div></div></div></div><div class="card" data-vid="rBXZkhtc9eE" data-t="Bangladesh Girl Interview 🇧🇩 #bangladesh #shortsfeed #ytshorts" data-ch="RAJON YT"><img class="thumb" src="https://i.ytimg.com/vi/rBXZkhtc9eE/hqdefault.jpg" /><div class="details"><div class="avatar"><img src="https://i.pravatar.cc/36?u=UCUsdc1w-p5_47Ot4qEmwitQ" /></div><div class="meta"><h3 class="title">Bangladesh Girl Interview 🇧🇩 #bangladesh #shortsfeed #ytshorts</h3><div class="info">RAJON YT — 20110K views</div></div></div></div><div class="card" data-vid="DhKPTou-rdg" data-t="Technologia of Bangladesh...🇧🇩🔥#bangladesh #technology #edit #os7 #fyp #trending #viralvideo" data-ch="os7🥏"><img class="thumb" src="https://i.ytimg.com/vi/DhKPTou-rdg/hqdefault.jpg" /><div class="details"><div class="avatar"><img src="https://i.pravatar.cc/36?u=UC105xojbndP5jNXsaAiyyQg" /></div><div class="meta"><h3 class="title">Technologia of Bangladesh...🇧🇩🔥#bangladesh #technology #edit #os7 #fyp #trending #viralvideo</h3><div class="info">os7🥏 — 8910K views</div></div></div></div><div class="card" data-vid="EHG6D8qyhMg" data-t="only Brazil Argentina fan can do this 😅🇧🇩#trending #bangladesh #viral #football #comedy #shorts" data-ch="EDIT 77 🥏"><img class="thumb" src="https://i.ytimg.com/vi/EHG6D8qyhMg/hqdefault.jpg" /><div class="details"><div class="avatar"><img src="https://i.pravatar.cc/36?u=UCkw0Mf6JKlbnvuYXGVeK4Ag" /></div><div class="meta"><h3 class="title">only Brazil Argentina fan can do this 😅🇧🇩#trending #bangladesh #viral #football #comedy #shorts</h3><div class="info">EDIT 77 🥏 — 710K views</div></div></div></div><div class="card" data-vid="GfBQWBnDbkE" data-t="Bangladesh street food...🇧🇩🥶#subscribe #fypシ゚trending #bangladesh #af7 #viralvideo" data-ch="AF7"><img class="thumb" src="https://i.ytimg.com/vi/GfBQWBnDbkE/hqdefault.jpg" /><div class="details"><div class="avatar"><img src="https://i.pravatar.cc/36?u=UCqe50Hs29lIoSiEztwSgkgw" /></div><div class="meta"><h3 class="title">Bangladesh street food...🇧🇩🥶#subscribe #fypシ゚trending #bangladesh #af7 #viralvideo</h3><div class="info">AF7 — 42510K views</div></div></div></div><div class="card" data-vid="jfSSLVc6UP4" data-t="🇧🇩 Shake it to the max – Bengali ver. #bangladesh" data-ch="Cha Dabin"><img class="thumb" src="https://i.ytimg.com/vi/jfSSLVc6UP4/hqdefault.jpg" /><div class="details"><div class="avatar"><img src="https://i.pravatar.cc/36?u=UCv50vqaNYubTfuOvvH1cuAg" /></div><div class="meta"><h3 class="title">🇧🇩 Shake it to the max – Bengali ver. #bangladesh</h3><div class="info">Cha Dabin — 28410K views</div></div></div></div><div class="card" data-vid="DZ5_n1L-Eow" data-t="Brazil Argentina fan in Bangladesh 😅🇧🇩 #trending #bangladesh #viral #football #comedy #shorts" data-ch="EDIT 77 🥏"><img class="thumb" src="https://i.ytimg.com/vi/DZ5_n1L-Eow/hqdefault.jpg" /><div class="details"><div class="avatar"><img src="https://i.pravatar.cc/36?u=UCkw0Mf6JKlbnvuYXGVeK4Ag" /></div><div class="meta"><h3 class="title">Brazil Argentina fan in Bangladesh 😅🇧🇩 #trending #bangladesh #viral #football #comedy #shorts</h3><div class="info">EDIT 77 🥏 — 31910K views</div></div></div></div><div class="card" data-vid="0gYHrN5V0Ug" data-t="Sadia Name Song In Bengali! 🇧🇩🤩🇮🇳 K3 Sisters #shorts #bengali #bangladesh #india #music #viral" data-ch="K3 Sisters Band"><img class="thumb" src="https://i.ytimg.com/vi/0gYHrN5V0Ug/hqdefault.jpg" /><div class="details"><div class="avatar"><img src="https://i.pravatar.cc/36?u=UCyd1FQbwxPyOACQuYgFzsJg" /></div><div class="meta"><h3 class="title">Sadia Name Song In Bengali! 🇧🇩🤩🇮🇳 K3 Sisters #shorts #bengali #bangladesh #india #music #viral</h3><div class="info">K3 Sisters Band — 34410K views</div></div></div></div><div class="card" data-vid="XhihYqOyYDY" data-t="Amazing Street Food of Bangladesh #reels #reelsfb #viral #trending" data-ch="TasteTube Shorts"><img class="thumb" src="https://i.ytimg.com/vi/XhihYqOyYDY/hqdefault.jpg" /><div class="details"><div class="avatar"><img src="https://i.pravatar.cc/36?u=UChjtMrTTiPLHrjOJSlOD2ug" /></div><div class="meta"><h3 class="title">Amazing Street Food of Bangladesh #reels #reelsfb #viral #trending</h3><div class="info">TasteTube Shorts — 1010K views</div></div></div></div><div class="card" data-vid="2g2Feu6e3Js" data-t="Best Flag Trend Bangladesh ☠️🇧🇩 #edit #flag #trollface #troll #shorts" data-ch="𝐊𝐀𝐄𝐃𝐈"><img class="thumb" src="https://i.ytimg.com/vi/2g2Feu6e3Js/hqdefault.jpg" /><div class="details"><div class="avatar"><img src="https://i.pravatar.cc/36?u=UCeQXxBUlirW5Uca9rSXRhiw" /></div><div class="meta"><h3 class="title">Best Flag Trend Bangladesh ☠️🇧🇩 #edit #flag #trollface #troll #shorts</h3><div class="info">𝐊𝐀𝐄𝐃𝐈 — 41610K views</div></div></div></div><div class="card" data-vid="C-H1Nq3p4ng" data-t="FIFA world cap in Bangladesh 😅🇧🇩 #trending #bangladesh #viral #football #comedy #shorts" data-ch="EDIT 77 🥏"><img class="thumb" src="https://i.ytimg.com/vi/C-H1Nq3p4ng/hqdefault.jpg" /><div class="details"><div class="avatar"><img src="https://i.pravatar.cc/36?u=UCkw0Mf6JKlbnvuYXGVeK4Ag" /></div><div class="meta"><h3 class="title">FIFA world cap in Bangladesh 😅🇧🇩 #trending #bangladesh #viral #football #comedy #shorts</h3><div class="info">EDIT 77 🥏 — 49210K views</div></div></div></div></main>
+        <nav class="bnav">
+            <div class="ni act" data-t="home"><div class="nic"><svg class="ii" viewBox="0 0 24 24"><path d="M12 4.33l7 6.12V20h-4v-6H9v6H5V10.45l7-6.12M12 3 4 10v11h6v-6h4v6h6V10L12 3z"/></path></svg><svg class="ia" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></path></svg></div><span class="nl">Home</span></div>
+            <div class="ni" data-t="shorts"><div class="nic"><svg class="ii" viewBox="0 0 24 24"><path d="M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25zm-.23 5.86-8.5 4.5c-1.34.71-3.01.2-3.72-1.14-.71-1.34-.2-3.01 1.14-3.72l2.04-1.08 1.5.63c-.69.52-1.13 1.33-1.13 2.23 0 1.38 1.12 2.5 2.5 2.5.51 0 .98-.15 1.38-.42l4.79-2.54c.34-.18.56-.52.56-.91 0-.57-.46-1.03-1.03-1.03-.18 0-.35.05-.5.13l-1.5.79-.63-1.5 2.04-1.08c1.34-.71 3.01-.2 3.72 1.14.71 1.34.2 3.01-1.16 3.72z"/></path></svg></div><span class="nl">Shorts</span></div>
+            <div class="ni ci" data-t="create"><div class="cc"><svg viewBox="0 0 24 24"><path d="M12 20h-2v-6H4v-2h6V6h2v6h6v2h-6z"/></path></svg></div><span class="nl" style="visibility:hidden">X</span></div>
+            <div class="ni" data-t="sub"><div class="nic"><svg class="ii" viewBox="0 0 24 24"><path d="M4 6h16v2H4zm2-4h12v2H6zm14 8H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2zm-8 12.5v-9l6 4.5-6 4.5z"/></path></svg></div><span class="nl">Subscriptions</span></div>
+            <div class="ni" data-t="you"><div class="nic"><svg class="ii" viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8 12.5v-9l6 4.5-6 4.5z"/></path></svg></div><span class="nl">You</span><span class="nbadge" id="nbadge">0</span></div>
+        </nav>
+    </div>
+    <div class="ib" id="installBanner"><div class="ib-i"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></path></svg></div><div class="ib-t">Install My Premium YouTube</div><button class="ib-b" id="installBtn">Install</button><i class="material-icons ib-c" id="installClose">close</i></div>
+
+    <!-- প্রোফাইল -->
+    <div id="profile">
+        <div class="pr-h"><i class="material-icons" id="backProf" style="font-size:28px">arrow_back</i><h3 id="profHeadTitle">My Profile</h3><i class="material-icons" id="profEditBtn" style="font-size:24px;color:var(--blue)">edit</i></div>
+        <div class="pr-ban">
+            <div class="pr-aw"><img id="profImg" class="pr-av" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23e0e0e0' width='100' height='100'/%3E%3Ccircle cx='50' cy='38' r='18' fill='%23bdbdbd'/%3E%3Cellipse cx='50' cy='85' rx='30' ry='22' fill='%23bdbdbd'/%3E%3C/svg%3E" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect fill=%22%23e0e0e0%22 width=%22100%22 height=%22100%22/%3E%3Ccircle cx=%2250%22 cy=%2238%22 r=%2218%22 fill=%22%23bdbdbd%22/%3E%3Cellipse cx=%2250%22 cy=%2285%22 rx=%2230%22 ry=%2222%22 fill=%22%23bdbdbd%22/%3E%3C/svg%3E'"><div class="pr-cam" id="camBtn"><i class="material-icons">photo_camera</i></div></div>
+            <div class="pr-nm" id="profName">Guest</div>
+            <div class="pr-em" id="profEmailTop">Tap to set up</div>
+        </div>
+        <div class="pr-sec" id="profViewMode">
+            <div class="pr-card"><h4>Personal Information</h4><div class="pf-row"><div class="pf-ic"><i class="material-icons">person</i></div><div><div class="pf-lb">Full Name</div><div class="pf-vl empty" id="pvName">Not set</div></div></div><div class="pf-row"><div class="pf-ic"><i class="material-icons">email</i></div><div><div class="pf-lb">Email</div><div class="pf-vl empty" id="pvEmail">Not set</div></div></div><div class="pf-row"><div class="pf-ic"><i class="material-icons">phone</i></div><div><div class="pf-lb">Phone</div><div class="pf-vl empty" id="pvPhone">Not set</div></div></div></div>
+            <div class="pr-card"><h4>Location</h4><div class="pf-row"><div class="pf-ic"><i class="material-icons">flag</i></div><div><div class="pf-lb">Country</div><div class="pf-vl empty" id="pvCountry">Not set</div></div></div><div class="pf-row"><div class="pf-ic"><i class="material-icons">location_city</i></div><div><div class="pf-lb">District / City</div><div class="pf-vl empty" id="pvDistrict">Not set</div></div></div><div class="pf-row"><div class="pf-ic"><i class="material-icons">home</i></div><div><div class="pf-lb">Address</div><div class="pf-vl empty" id="pvAddress">Not set</div></div></div></div>
+            <div class="pr-card"><h4>Preferences</h4><div class="pf-row"><div class="pf-ic"><i class="material-icons">language</i></div><div><div class="pf-lb">Language</div><div class="pf-vl empty" id="pvLang">Not set</div></div></div></div>
+            <button class="btn-ed" id="editProfBtn">Edit Profile</button>
+            <button class="btn-so" id="signOutBtn"><i class="material-icons" style="font-size:18px;vertical-align:middle">logout</i> Sign Out</button>
+        </div>
+        <div class="pr-sec" id="profEditMode" style="display:none">
+            <div class="pr-card"><h4>Personal Information</h4><div class="pf-row"><div class="pf-ic"><i class="material-icons">person</i></div><div style="flex:1"><div class="pf-lb">Full Name</div><input type="text" class="pe-in" id="peName" placeholder="Enter name"></div></div><div class="pf-row"><div class="pf-ic"><i class="material-icons">phone</i></div><div style="flex:1"><div class="pf-lb">Phone</div><input type="tel" class="pe-in" id="pePhone" placeholder="Enter number"></div></div></div>
+            <div class="pr-card"><h4>Location</h4><div class="pf-row"><div class="pf-ic"><i class="material-icons">flag</i></div><div style="flex:1"><div class="pf-lb">Country</div><select class="pe-sel" id="peCountry"><option value="" selected>Select</option><option value="Bangladesh">Bangladesh</option><option value="India">India</option><option value="Pakistan">Pakistan</option><option value="United States">United States</option><option value="United Kingdom">United Kingdom</option><option value="Saudi Arabia">Saudi Arabia</option><option value="UAE">UAE</option><option value="Other">Other</option></select></div></div><div class="pf-row"><div class="pf-ic"><i class="material-icons">location_city</i></div><div style="flex:1"><div class="pf-lb">District / City</div><input type="text" class="pe-in" id="peDistrict" placeholder="Enter district"></div></div><div class="pf-row"><div class="pf-ic"><i class="material-icons">home</i></div><div style="flex:1"><div class="pf-lb">Full Address</div><textarea class="pe-ara" id="peAddress" placeholder="House, Road, Area..."></textarea></div></div></div>
+            <div class="pr-card"><h4>Preferences</h4><div class="pf-row"><div class="pf-ic"><i class="material-icons">language</i></div><div style="flex:1"><div class="pf-lb">Language</div><select class="pe-sel" id="peLang"><option value="" selected>Select</option><option value="বাংলা">বাংলা</option><option value="English">English</option><option value="हिन्दी">हिन्दी</option><option value="اردو">اردو</option></select></div></div></div>
+            <div class="pr-btns"><button class="btn-cl" id="cancelEdit">Cancel</button><button class="btn-sv" id="saveEdit">Save</button></div>
+        </div>
+        <div class="pentry" id="openDl"><i class="material-icons">download_for_offline</i><span>Downloads</span><span style="background:var(--red);color:#fff;font-size:11px;font-weight:600;padding:2px 8px;border-radius:8px;display:none" id="pbadge">0</span><i class="material-icons" style="font-size:20px;color:var(--txs)">chevron_right</i></div>
+    </div>
+
+    <!-- ডাউনলোড পেজ -->
+    <div id="dlPage"><div class="dlh"><i class="material-icons" id="backDl" style="font-size:28px">arrow_back</i><h3>Downloads</h3></div><div id="dlList"></div><div id="edl" class="edl"><i class="material-icons">download_for_offline</i><h4>No downloads yet</h4><p>Import videos to watch offline</p></div></div>
+
+    <!-- ডাউনলোড মোডাল -->
+    <div id="dlModal"><div class="dms"><div class="dmh2"></div><div class="dmhd"><h3>Download video</h3><p id="dmTitle"></p></div><div class="mc" id="mShare"><div class="mch"><div class="mci red"><i class="material-icons">share</i></div><div class="mct"><strong>Send to download app</strong><span>Share to TubeMate, SnapTube etc.</span><span class="best">Best for mobile</span></div><i class="material-icons arr">chevron_right</i></div></div><div class="imp-area" id="impArea"><i class="material-icons">folder_open</i><p><strong>Select video from device</strong></p><p style="margin-top:6px">Already have the file? Tap to import</p></div><div class="imp-prog" id="impProg"><div class="ipb"><div class="ipf" id="impFill"></div></div><div class="iptx"><span id="impPct">0%</span><span id="impSz">Reading...</span></div></div><div class="mc" id="mWeb"><div class="mch"><div class="mci blue"><i class="material-icons">language</i></div><div class="mct"><strong>Open download website</strong><span>Download then import</span></div><i class="material-icons arr">chevron_right</i></div></div><div class="mc" id="mCopy"><div class="mch"><div class="mci orange"><i class="material-icons">content_copy</i></div><div class="mct"><strong>Copy video link</strong><span>Paste in any download app</span></div><i class="material-icons arr">chevron_right</i></div></div><div class="dm-can" id="dmCan">Cancel</div></div></div>
+
+    <!-- ভিডিও মোডাল -->
+    <div id="modal"><div class="pw"><iframe id="player" allow="autoplay;fullscreen" allowfullscreen></iframe><video id="oplayer" class="op" controls playsinline></video><button class="cb" id="closeModal"><i class="material-icons">keyboard_arrow_down</i></button></div><div class="vb"><h3 class="vt" id="vTitle"></h3><div class="vs" id="vStats"></div><div class="cr" id="chRow"><img id="vChImg" src="https://i.pravatar.cc/36" alt=""><div class="ci2"><p class="cn" id="vChName">Channel</p><p class="cs" id="vChSubs">0 subscribers</p></div><button class="sbtn" id="subBtn">Subscribe</button></div><div class="acts"><div class="ag"><button class="ab" id="likeBtn"><i class="material-icons">thumb_up</i><span id="likeCnt">0</span></button><div style="width:1px;height:22px;background:var(--bd)"></div><button class="ab" id="dislikeBtn"><i class="material-icons">thumb_down</i></button></div><button class="ab" id="shareBtn"><i class="material-icons">share</i><span>Share</span></button><button class="ab" id="dlBtn"><i class="material-icons">download</i><span>Download</span></button><button class="ab" id="saveBtn"><i class="material-icons">playlist_add</i><span>Save</span></button></div><div class="desc" id="descBox"><div class="ds" id="descStats"></div><div class="dt2" id="descText"></div></div></div><div class="cmts" id="cmtSec"><h4 style="margin:0 0 16px">Comments <span id="cmtCnt">0</span></h4><div class="ci3"><img src="https://i.pravatar.cc/32?u=me" style="width:32px;height:32px;border-radius:50%;object-fit:cover"><input type="text" id="cmtInput" placeholder="Add a comment..."><button id="cmtPost">Post</button></div><div id="cmtList"></div></div><div class="un" id="upSec"><div class="unt">Up next</div><div id="upList"></div></div></div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script>
+    /* কপিরাইট প্রটেকশন */
+    document.addEventListener('contextmenu',e=>{if(!e.target.matches('input,textarea,select'))e.preventDefault()});
+    document.addEventListener('copy',e=>{if(!e.target.matches('input,textarea'))e.preventDefault()});
+    document.addEventListener('cut',e=>e.preventDefault());
+    document.addEventListener('dragstart',e=>e.preventDefault());
+    document.addEventListener('keydown',e=>{if(e.ctrlKey&&['u','s','c','p','a'].includes(e.key))e.preventDefault();if(e.key==='F12')e.preventDefault();if(e.ctrlKey&&e.shiftKey&&['I','J','C'].includes(e.key))e.preventDefault()});
+
+    /* PWA ম্যানিফেস্ট */
+    const mf={name:"My Premium YouTube",short_name:"Premium YT",description:"Watch videos offline",start_url:"./",display:"standalone",background_color:"#ffffff",theme_color:"#ff0000",icons:[{src:"icon.png",sizes:"512x512",type:"image/png",purpose:"any maskable"}]};
+    const ml=document.createElement('link');ml.rel='manifest';ml.href=URL.createObjectURL(new Blob([JSON.stringify(mf)],{type:'application/json'}));document.head.appendChild(ml);
+    if('serviceWorker' in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
+    let dp;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();dp=e;document.getElementById('installBanner').classList.add('show')});
+
+    /* মূল কোড */
+    function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3500)}
+    const fc={apiKey:"AIzaSyA8lHi8CmWk1GAR5YzyNUCaI1nDPn2p9aw",authDomain:"my-you-tube-4b216.firebaseapp.com",databaseURL:"https://my-you-tube-4b216-default-rtdb.firebaseio.com",projectId:"my-you-tube-4b216",storageBucket:"my-you-tube-4b216.firebasestorage.app",messagingSenderId:"436495149968",appId:"1:436495149968:web:5096c57a7be9e17e4aa115"};
+    const YK="AIzaSyAbXbNRqKPGJO8ShoFxgYBtMvBIiwqxUNA";
+    firebase.initializeApp(fc);const auth=firebase.auth(),db=firebase.database(),sto=firebase.storage();
+    let user=null,token='',query='Trending in Bangladesh',loading=false,curVid="",curTitle="",curChannel="",curThumb="",vRef=null,cRef=null,vList=[];
+
+    /* IndexedDB */
+    const DB='mytube_dl',SV=2,ST='videos';let idb=null;
+    function odb(){return new Promise((r,j)=>{const q=indexedDB.open(DB,SV);q.onupgradeneeded=e=>{const d=e.target.result;if(!d.objectStoreNames.contains(ST))d.createObjectStore(ST,{keyPath:'id'})};q.onsuccess=e=>{idb=e.target.result;r(idb)};q.onerror=e=>j(e)})}
+    function dbP(d){return new Promise((r,j)=>{const t=idb.transaction(ST,'readwrite');t.objectStore(ST).put(d);t.oncomplete=()=>r();t.onerror=e=>j(e)})}
+    function dbG(i){return new Promise((r,j)=>{const t=idb.transaction(ST,'readonly');const g=t.objectStore(ST).get(i);g.onsuccess=()=>r(g.result);g.onerror=e=>j(e)})}
+    function dbD(i){return new Promise((r,j)=>{const t=idb.transaction(ST,'readwrite');t.objectStore(ST).delete(i);t.oncomplete=()=>r();t.onerror=e=>j(e)})}
+    function dbA(){return new Promise((r,j)=>{const t=idb.transaction(ST,'readonly');const g=t.objectStore(ST).getAll();g.onsuccess=()=>r(g.result);g.onerror=e=>j(e)})}
+    function fs(b){if(b<1024)return b+' B';if(b<1048576)return(b/1024).toFixed(1)+' KB';return(b/1048576).toFixed(1)+' MB'}
+    async function ub(){const a=await dbA();const c=a.length;const b=document.getElementById('nbadge'),p=document.getElementById('pbadge');if(c>0){b.textContent=c;b.classList.add('show');p.textContent=c;p.style.display='inline'}else{b.classList.remove('show');p.style.display='none'}}
+    async function td(u){try{const r=await fetch(u);const b=await r.blob();return await new Promise(r=>{const f=new FileReader();f.onload=()=>r(f.result);f.readAsDataURL(b)})}catch(e){return u}}
+
+    /* প্রোফাইল লোড */
+    function lp(d){d=d||{};document.getElementById('profName').textContent=d.fullName||d.email?.split('@')[0]||'Guest';document.getElementById('profEmailTop').textContent=d.email||'Tap to set up';const img=document.getElementById('profImg');if(d.profilePic){img.src=d.profilePic;img.onerror=()=>{img.src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23e0e0e0' width='100' height='100'/%3E%3Ccircle cx='50' cy='38' r='18' fill='%23bdbdbd'/%3E%3Cellipse cx='50' cy='85' rx='30' ry='22' fill='%23bdbdbd'/%3E%3C/svg%3E"}}else{img.src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23e0e0e0' width='100' height='100'/%3E%3Ccircle cx='50' cy='38' r='18' fill='%23bdbdbd'/%3E%3Cellipse cx='50' cy='85' rx='30' ry='22' fill='%23bdbdbd'/%3E%3C/svg%3E"}
+    const sv=(id,v)=>{const e=document.getElementById(id);e.textContent=v||'Not set';e.classList.toggle('empty',!v)};sv('pvName',d.fullName);sv('pvEmail',d.email);sv('pvPhone',d.phone);sv('pvCountry',d.country);sv('pvDistrict',d.district);sv('pvAddress',d.address);sv('pvLang',d.language);document.getElementById('peName').value=d.fullName||'';document.getElementById('pePhone').value=d.phone||'';document.getElementById('peCountry').value=d.country||'';document.getElementById('peDistrict').value=d.district||'';document.getElementById('peAddress').value=d.address||'';document.getElementById('peLang').value=d.language||''}
+
+    /* ইনিশিয়ালাইজ */
+    document.getElementById('grid').innerHTML='';
+    odb().then(()=>{ub();fv(query)}).catch(e=>console.error(e));
+    auth.onAuthStateChanged(u=>{user=u;if(u){document.getElementById('auth').style.display='none';document.getElementById('authLogin').style.display='none';db.ref('users/'+u.uid).on('value',s=>lp(s.val()))}else{document.getElementById('auth').style.display='flex';document.getElementById('authLogin').style.display='none';lp(null)}});
+
+    /* ফটো আপলোড - ফিক্স */
+    document.getElementById('camBtn').addEventListener('click',()=>{if(!user)return toast('Sign in first');document.getElementById('fileInput').click()});
+    document.getElementById('fileInput').addEventListener('change',async e=>{
+        const f=e.target.files[0];if(!f)return;toast('Uploading photo...');
+        try{
+            /* প্রথমে ডাটা URL তৈরি করি */
+            const dataUrl=await new Promise((res,rej)=>{const fr=new FileReader();fr.onload=()=>res(fr.result);fr.onerror=rej;fr.readAsDataURL(f)});
+            /* তারপর Firebase এ আপলোড */
+            const ref=sto.ref('profile_pics/'+user.uid+'.jpg');
+            await ref.put(f);
+            const url=await ref.getDownloadURL();
+            await db.ref('users/'+user.uid).update({profilePic:url});
+            /* সাথে সাথে ডিসপ্লে আপডেট */
+            document.getElementById('profImg').src=dataUrl;
+            toast('Photo updated!');
+        }catch(err){console.error(err);toast('Upload failed!')}
+        e.target.value='';
+    });
+
+    /* এডিট/সেভ */
+    document.getElementById('profEditBtn').addEventListener('click',te);
+    document.getElementById('editProfBtn').addEventListener('click',te);
+    document.getElementById('cancelEdit').addEventListener('click',te);
+    document.getElementById('saveEdit').addEventListener('click',async()=>{
+        if(!user)return;const data={fullName:document.getElementById('peName').value.trim(),phone:document.getElementById('pePhone').value.trim(),country:document.getElementById('peCountry').value,district:document.getElementById('peDistrict').value.trim(),address:document.getElementById('peAddress').value.trim(),language:document.getElementById('peLang').value,updatedAt:Date.now()};try{await db.ref('users/'+user.uid).update(data);te();toast('Profile saved!')}catch(e){toast('Failed to save')}
+    });
+    function te(){const v=document.getElementById('profViewMode'),e=document.getElementById('profEditMode'),h=document.getElementById('profHeadTitle');const s=e.style.display==='none';v.style.display=s?'none':'';e.style.display=s?'':'none';h.textContent=s?'Edit Profile':'My Profile'}
+
+    /* স্প্ল্যাশ */
+    document.getElementById('spDl').addEventListener('click',()=>{if(dp)dp.prompt();else{const a=document.createElement('a');a.href='https://my-premium-you-tube.vercel.app/';a.target='_blank';a.click()}});
+    document.getElementById('spSkip').addEventListener('click',()=>{document.getElementById('splash').classList.add('hide');setTimeout(()=>document.getElementById('splash').style.display='none',400)});
+    document.getElementById('installBtn').addEventListener('click',()=>{if(dp){dp.prompt();dp.userChoice.then(()=>{dp=null;document.getElementById('installBanner').classList.remove('show')})}});
+    document.getElementById('installClose').addEventListener('click',()=>document.getElementById('installBanner').classList.remove('show'));
+
+    /* রেজিস্ট্রেশন */
+    document.getElementById('signupBtn').addEventListener('click',async()=>{
+        const n=document.getElementById('regName').value.trim(),em=document.getElementById('regEmail').value.trim(),ph=document.getElementById('regPhone').value.trim(),co=document.getElementById('regCountry').value,di=document.getElementById('regDistrict').value.trim(),la=document.getElementById('regLang').value,ad=document.getElementById('regAddress').value.trim(),pa=document.getElementById('regPass').value,er=document.getElementById('errMsg');
+        if(!n||!em||!ph||!co||!di||!la||!pa){er.textContent='All required fields must be filled';return}
+        try{const c=await auth.createUserWithEmailAndPassword(em,pa);await db.ref('users/'+c.user.uid).set({email:em,fullName:n,phone:ph,country:co,district:di,language:la,address:ad,createdAt:Date.now()});er.textContent=''}catch(e){er.textContent=e.message}
+    });
+    document.getElementById('loginToggle').addEventListener('click',()=>{document.getElementById('auth').style.display='none';document.getElementById('authLogin').style.display='flex'});
+    document.getElementById('signupToggle').addEventListener('click',()=>{document.getElementById('authLogin').style.display='none';document.getElementById('auth').style.display='flex'});
+    document.getElementById('loginBtn').addEventListener('click',()=>{auth.signInWithEmailAndPassword(document.getElementById('loginEmail').value,document.getElementById('loginPass').value).then(()=>{document.getElementById('authLogin').style.display='none';document.getElementById('splash').classList.add('hide');setTimeout(()=>document.getElementById('splash').style.display='none',400);toast('Welcome back!')}).catch(e=>document.getElementById('errMsg2').textContent=e.message)});
+    document.getElementById('signOutBtn').addEventListener('click',()=>{auth.signOut().then(()=>{document.getElementById('profile').style.display='none';toast('Signed out')})});
+
+    /* ইভেন্ট */
+    document.addEventListener('click',async e=>{
+        if(e.target.closest('#searchBtn')){document.getElementById('searchBar').style.display='flex';document.getElementById('searchInput').focus()}
+        if(e.target.closest('#backSearch'))document.getElementById('searchBar').style.display='none';
+        if(e.target.closest('#doSearch'))ds();
+        if(e.target.closest('#homeBtn')){query='Trending in Bangladesh';token='';document.getElementById('grid').innerHTML='';vList=[];fv(query);sn('home')}
+        if(e.target.closest('#profBtn'))document.getElementById('profile').style.display='flex';
+        if(e.target.closest('#backProf'))document.getElementById('profile').style.display='none';
+        if(e.target.closest('#openDl')){document.getElementById('profile').style.display='none';document.getElementById('dlPage').style.display='flex';rdl()}
+        if(e.target.closest('#backDl'))document.getElementById('dlPage').style.display='none';
+        const dt=e.target.closest('.dlt');if(dt){document.getElementById('dlPage').style.display='none';po(dt.dataset.vid)}
+        const dd=e.target.closest('.dbtn');if(dd){await dbD(dd.dataset.del);toast('Deleted');rdl();ub();rdb()}
+        if(e.target.closest('#dmCan')||e.target.id==='dlModal')cdm();
+        if(e.target.closest('#mShare')){const u='https://www.youtube.com/watch?v='+curVid;if(navigator.share)navigator.share({title:curTitle,url:u}).then(()=>cdm()).catch(()=>{});else{navigator.clipboard.writeText(u).then(()=>{toast('Copied!');cdm()})}}
+        if(e.target.closest('#impArea'))document.getElementById('vidImport').click();
+        if(e.target.closest('#mWeb')){window.open('https://www.y2mate.com/youtube/'+curVid,'_blank');cdm();toast('Download then import')}
+        if(e.target.closest('#mCopy')){navigator.clipboard.writeText('https://www.youtube.com/watch?v='+curVid).then(()=>{toast('Copied!');cdm()})}
+        const nv=e.target.closest('.ni');if(nv){const t=nv.dataset.t;if(t==='create'){window.open('https://www.youtube.com/upload','_blank');return}sn(t);if(t==='home'){query='Trending in Bangladesh';token='';document.getElementById('grid').innerHTML='';vList=[];fv(query)}else if(t==='shorts'){query='Shorts';token='';document.getElementById('grid').innerHTML='';vList=[];fv(query)}else if(t==='sub'){toast('Sign in to see subscriptions')}else if(t==='you'){document.getElementById('profile').style.display='flex'}}
+        const cd=e.target.closest('.card');if(cd)pl(cd.dataset.vid,cd.dataset.t,cd.dataset.ch);
+        const up=e.target.closest('.uni');if(up)pl(up.dataset.vid,up.dataset.t,up.dataset.ch);
+        if(e.target.closest('#closeModal')){document.getElementById('modal').style.display='none';document.getElementById('player').src='';const op=document.getElementById('oplayer');op.pause();op.src='';op.style.display='none';document.getElementById('player').style.display='block';document.getElementById('cmtSec').style.display='';document.getElementById('upSec').style.display='';document.getElementById('chRow').style.display='';dtc()}
+        if(e.target.closest('#likeBtn'))tlk();if(e.target.closest('#dislikeBtn'))tdl();
+        if(e.target.closest('#shareBtn')){const u='https://www.youtube.com/watch?v='+curVid;if(navigator.share)navigator.share({title:curTitle,url:u}).catch(()=>{});else{navigator.clipboard.writeText(u).then(()=>toast('Copied!')).catch(()=>toast('Failed'))}}
+        if(e.target.closest('#dlBtn')){const s=await dbG(curVid);if(s)toast('Already saved');else odm(curVid,curTitle,curChannel,curThumb)}
+        if(e.target.closest('#saveBtn'))toast('Saved to Watch later');
+        if(e.target.closest('#subBtn'))tsb();
+    });
+    document.getElementById('vidImport').addEventListener('change',e=>{const f=e.target.files[0];if(f)imp(f);e.target.value=''});
+    function sn(t){document.querySelectorAll('.ni').forEach(n=>n.classList.remove('act'));const el=document.querySelector('.ni[data-t="'+t+'"]');if(el)el.classList.add('act')}
+    window.addEventListener('scroll',()=>{if(window.innerHeight+window.scrollY>=document.body.offsetHeight-500&&!loading&&token)fv(query,true)});
+    document.getElementById('cmtInput').addEventListener('focus',()=>document.getElementById('cmtPost').style.display='block');
+    document.getElementById('cmtPost').addEventListener('click',pc);
+    document.getElementById('searchInput').addEventListener('keypress',e=>{if(e.key==='Enter')ds()});
+    document.getElementById('descBox').addEventListener('click',()=>{const d=document.getElementById('descText');d.style.webkitLineClamp=d.style.webkitLineClamp==='unset'?'2':'unset'});
+    function ds(){const q=document.getElementById('searchInput').value;if(q.trim()){query=q;token='';document.getElementById('grid').innerHTML='';vList=[];fv(query);document.getElementById('searchBar').style.display='none'}}
+    function dtc(){if(vRef)vRef.off();if(cRef)cRef.off()}
+
+    function pl(id,title,ch){curVid=id;curTitle=title;curChannel=ch;const f=vList.find(v=>v.id===id);curThumb=f?f.thumb:'';document.getElementById('player').style.display='block';document.getElementById('oplayer').style.display='none';document.getElementById('cmtSec').style.display='';document.getElementById('upSec').style.display='';document.getElementById('chRow').style.display='';document.getElementById('player').src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';document.getElementById('vTitle').innerText=title;document.getElementById('vChName').innerText=ch;document.getElementById('vChImg').src='https://i.pravatar.cc/36?u='+ch;document.getElementById('descText').innerText='Channel: '+ch;const d=new Date();const v=Math.floor(Math.random()*1000)+10;document.getElementById('vStats').innerText=document.getElementById('descStats').innerText=v+'K views — '+d.toLocaleDateString();document.getElementById('modal').style.display='flex';document.getElementById('modal').scrollTop=0;run(id);rdb();dtc();vRef=db.ref('videos/'+id);vRef.on('value',s=>{const d=s.val()||{},l=d.likes||{};document.getElementById('likeCnt').innerText=Object.keys(l).length;document.getElementById('likeBtn').classList.remove('liked');if(user){if(l[user.uid])document.getElementById('likeBtn').classList.add('liked');document.getElementById('subBtn').classList.toggle('subbed',!!(d.subscribers||{})[user.uid]);document.getElementById('subBtn').innerText=(d.subscribers||{})[user.uid]?'Subscribed':'Subscribe'}});cRef=db.ref('videos/'+id+'/comments');cRef.on('value',s=>{const list=document.getElementById('cmtList');list.innerHTML='';const c=s.val();let n=0;if(c){Object.entries(c).sort((a,b)=>b[1].timestamp-a[1].timestamp).forEach(([k,v])=>{n++;list.innerHTML+='<div class="cm"><img src="https://i.pravatar.cc/32?u='+v.userId+'"><div><div class="cmu">'+v.username+' — '+ts(v.timestamp)+'</div><p>'+v.text+'</p></div></div>'})}document.getElementById('cmtCnt').innerText=n})}
+    function tlk(){if(!user)return toast('Sign in');const r=db.ref('videos/'+curVid);r.child('likes/'+user.uid).once('value',s=>{if(s.exists())r.child('likes/'+user.uid).remove();else{r.child('likes/'+user.uid).set(true);r.child('dislikes/'+user.uid).remove()}})}
+    function tdl(){if(!user)return toast('Sign in');const r=db.ref('videos/'+curVid);r.child('dislikes/'+user.uid).once('value',s=>{if(s.exists())r.child('dislikes/'+user.uid).remove();else{r.child('dislikes/'+user.uid).set(true);r.child('likes/'+user.uid).remove()}})}
+    function tsb(){if(!user)return toast('Sign in');const r=db.ref('videos/'+curVid);r.child('subscribers/'+user.uid).once('value',s=>{if(s.exists())r.child('subscribers/'+user.uid).remove();else r.child('subscribers/'+user.uid).set(true)})}
+    function pc(){if(!user)return toast('Sign in');const t=document.getElementById('cmtInput').value.trim();if(!t)return;db.ref('videos/'+curVid+'/comments').push({userId:user.uid,username:user.email.split('@')[0],text:t,timestamp:Date.now()});document.getElementById('cmtInput').value='';toast('Posted!')}
+    function run(id){document.getElementById('upList').innerHTML='';vList.filter(v=>v.id!==id).slice(0,15).forEach(v=>{document.getElementById('upList').innerHTML+='<div class="uni" data-vid="'+v.id+'" data-t="'+v.title+'" data-ch="'+v.channel+'"><div class="unt2"><img src="'+v.thumb+'"></div><div class="unm"><h4>'+v.title+'</h4><p>'+v.channel+'</p></div></div>'})}
+    function ts(t){const s=Math.floor((Date.now()-t)/1000);if(s<60)return'just now';if(s<3600)return Math.floor(s/60)+'m ago';if(s<86400)return Math.floor(s/3600)+'h ago';return Math.floor(s/86400)+'d ago'}
+    async function fv(q,m=false){if(loading)return;loading=true;let u='https://www.googleapis.com/youtube/v3/search?part=snippet&q='+encodeURIComponent(q)+'&key='+YK+'&type=video&maxResults=20';if(token)u+='&pageToken='+token;try{const r=await fetch(u);const d=await r.json();if(d.error)throw new Error(d.error.message);token=d.nextPageToken||'';sv(d.items)}catch(e){document.getElementById('grid').innerHTML='<p style="color:red;text-align:center;padding:20px">'+e.message+'</p>'}finally{loading=false;rdb()}}
+    function sv(videos){if(!videos)return;videos.forEach(v=>{const id=v.id.videoId;if(!id)return;vList.push({id,title:v.snippet.title,thumb:v.snippet.thumbnails.medium.url,channel:v.snippet.channelTitle});const d=document.createElement('div');d.className='card';d.dataset.vid=id;d.dataset.t=v.snippet.title;d.dataset.ch=v.snippet.channelTitle;d.innerHTML='<img class="thumb" src="'+v.snippet.thumbnails.high.url+'"><div class="details"><div class="avatar"><img src="https://i.pravatar.cc/36?u='+v.snippet.channelId+'"></div><div class="meta"><h3 class="title">'+v.snippet.title+'</h3><div class="info">'+v.snippet.channelTitle+' — '+Math.floor(Math.random()*500)+10+'K views</div></div></div>';document.getElementById('grid').appendChild(d)})}
+    function odm(vid,title,ch,thumb){curVid=vid;curTitle=title;curChannel=ch;curThumb=thumb;document.getElementById('dmTitle').textContent=title;document.getElementById('impProg').classList.remove('show');document.getElementById('impFill').style.width='0%';document.getElementById('dlModal').style.display='flex'}
+    function cdm(){document.getElementById('dlModal').style.display='none'}
+    async function imp(file){const pg=document.getElementById('impProg'),fl=document.getElementById('impFill'),pc=document.getElementById('impPct'),sz=document.getElementById('impSz');pg.classList.add('show');fl.style.width='0%';pc.textContent='0%';sz.textContent='Reading...';try{let td=curThumb;try{const vu=URL.createObjectURL(file);td=await new Promise(res=>{const v=document.createElement('video');v.preload='metadata';v.muted=true;v.src=vu;v.onloadeddata=()=>{v.currentTime=Math.min(v.duration,3)};v.onseeked=()=>{const c=document.createElement('canvas');c.width=320;c.height=180;c.getContext('2d').drawImage(v,0,0,320,180);res(c.toDataURL('image/jpeg',.7));URL.revokeObjectURL(vu)};v.onerror=()=>{URL.revokeObjectURL(vu);res(curThumb)};setTimeout(()=>{URL.revokeObjectURL(vu);res(curThumb)},5000)})}catch(e){}const total=file.size;let loaded=0;const intv=setInterval(()=>{loaded=Math.min(loaded+total/15,total);fl.style.width=Math.round(loaded/total*100)+'%';pc.textContent=Math.round(loaded/total*100)+'%';sz.textContent=fs(loaded)+' / '+fs(total);if(loaded>=total)clearInterval(intv)},150);const blob=new Blob([file],{type:file.type||'video/mp4'});clearInterval(intv);fl.style.width='100%';pc.textContent='100%';sz.textContent=fs(blob.size)+' saved';await dbP({id:curVid+'_imp_'+Date.now(),title:curTitle||file.name,channel:curChannel||'Local',thumb:td,blob:blob,quality:file.size<5*1024*1024?'audio':'720p',size:blob.size,timestamp:Date.now()});setTimeout(()=>{cdm();toast('Saved!');ub();rdb()},600)}catch(e){toast('Failed');pg.classList.remove('show')}}
+    async function rdb(){const all=await dbA();const ids=new Set(all.map(v=>v.id));document.querySelectorAll('.card').forEach(c=>{const ex=c.querySelector('.dl-badge');if(ids.has(c.dataset.vid)){if(!ex)c.querySelector('.thumb').insertAdjacentHTML('afterend','<div class="dl-badge"><i class="material-icons">download_done</i></div>')}else{if(ex)ex.remove()}});const s=[...ids].some(id=>id.startsWith(curVid));const btn=document.getElementById('dlBtn');btn.classList.toggle('dl-saved',s);btn.querySelector('span').textContent=s?'Saved':'Download'}
+    async function rdl(){const all=await dbA();const list=document.getElementById('dlList');const empty=document.getElementById('edl');list.innerHTML='';if(!all.length){empty.style.display='flex'}else{empty.style.display='none';all.sort((a,b)=>b.timestamp-a.timestamp).forEach(v=>{const d=document.createElement('div');d.className='dli';d.innerHTML='<div class="dlt" data-vid="'+v.id+'"><img src="'+v.thumb+'"><div class="dov"><i class="material-icons">play_arrow</i></div></div><div class="dlm"><h4>'+v.title+'</h4><p>'+(v.quality||'').toUpperCase()+' — '+fs(v.size)+'</p></div><button class="dbtn" data-del="'+v.id+'"><i class="material-icons">delete_outline</i></button>';list.appendChild(d)})}}
+    async function po(vid){const data=await dbG(vid);if(!data||!data.blob)return toast('Not found');const bu=URL.createObjectURL(data.blob);const op=document.getElementById('oplayer'),ip=document.getElementById('player');ip.style.display='none';op.style.display='block';op.src=bu;op.play().catch(()=>{});document.getElementById('vTitle').innerText=data.title;document.getElementById('vChRow').style.display='none';document.getElementById('cmtSec').style.display='none';document.getElementById('upSec').style.display='none';document.getElementById('dlBtn').classList.add('dl-saved');document.getElementById('modal').style.display='flex';document.getElementById('modal').scrollTop=0}
+    </script>
+
+
+</body></html>
