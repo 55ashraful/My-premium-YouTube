@@ -1,5 +1,6 @@
-var CACHE_NAME = 'mytube-v5';
-var URLS_TO_CACHE = ['./', './index.html'];
+var CACHE_NAME = 'mytube-v6';
+// config.js ক্যাশের লিস্টে যোগ করা হলো
+var URLS_TO_CACHE = ['./', './index.html', './config.js'];
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
