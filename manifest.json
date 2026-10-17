@@ -1,0 +1,70 @@
+{
+    "name": "My Premium YouTube - মাই প্রিমিয়াম ইউটিউব",
+    "short_name": "Premium YT",
+    "description": "Watch trending videos, shorts, download for offline. Best video platform in Bangladesh.",
+    "start_url": "./",
+    "scope": "./",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#ffffff",
+    "theme_color": "#ff0000",
+    "lang": "bn",
+    "dir": "ltr",
+    "categories": ["entertainment", "video", "multimedia"],
+    "icons": [
+        {
+            "src": "icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icon-512.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icon-512.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+    "screenshots": [],
+    "shortcuts": [
+        {
+            "name": "Search Videos",
+            "short_name": "Search",
+            "description": "Search for videos",
+            "url": "./?action=search",
+            "icons": [{ "src": "icon-512.png", "sizes": "192x192", "type": "image/png" }]
+        },
+        {
+            "name": "Downloads",
+            "short_name": "Downloads",
+            "description": "View offline videos",
+            "url": "./?action=downloads",
+            "icons": [{ "src": "icon-512.png", "sizes": "192x192", "type": "image/png" }]
+        },
+        {
+            "name": "Profile",
+            "short_name": "Profile",
+            "description": "Your profile and settings",
+            "url": "./?action=profile",
+            "icons": [{ "src": "icon-512.png", "sizes": "192x192", "type": "image/png" }]
+        }
+    ],
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "display_override": ["standalone", "minimal-ui", "browser"],
+    "edge_side_panel": {
+        "preferred_width": 400
+    }
+}
